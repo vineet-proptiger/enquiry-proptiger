@@ -62,7 +62,7 @@ export default function Hero({ setIsOpen }) {
             <span style={{
               fontFamily: F_SANS, fontSize: '9px', fontWeight: 700,
               letterSpacing: '0.14em', textTransform: 'uppercase',
-              color: 'var(--color-teal)',
+              color: '#fff',
               border: '1px solid var(--color-teal-light)',
               padding: '4px 10px', borderRadius: '2px',
               background: 'rgba(13,26,36,0.65)', backdropFilter: 'blur(6px)',
@@ -195,7 +195,7 @@ export default function Hero({ setIsOpen }) {
               <span style={{
                 fontFamily: F_SANS, fontSize: '10px', fontWeight: 700,
                 letterSpacing: '0.15em', textTransform: 'uppercase',
-                color: 'var(--color-teal)',
+                color: '#fff',
                 border: '1px solid var(--color-teal-light)',
                 padding: '5px 14px', borderRadius: '2px',
                 background: 'rgba(13,26,36,0.5)', backdropFilter: 'blur(8px)',
