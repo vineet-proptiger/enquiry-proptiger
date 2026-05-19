@@ -414,15 +414,12 @@ const Overview = () => {
           {/* LEFT: Image */}
           <div data-aos="fade-right" style={{ display: "flex" }}>
             <div
+              className="relative w-full aspect-[4/5] lg:aspect-auto lg:h-full lg:min-h-[480px]"
               style={{
-                position: "relative",
                 borderRadius: "16px",
                 overflow: "hidden",
                 boxShadow: "0 16px 48px rgba(0,0,0,0.14)",
                 border: "3px solid #fff",
-                width: "100%",
-                height: "100%",
-                minHeight: "420px",
                 background: "linear-gradient(180deg, #fffdf8, #f5efe2)",
               }}
             >
@@ -430,7 +427,7 @@ const Overview = () => {
                 src={overviewImage}
                 alt="L&T Island Cove Mahim"
                 fill
-                className="object-cover"
+                className="object-cover object-top"
                 sizes="(max-width: 1024px) 100vw, 33vw"
                 priority
               />
