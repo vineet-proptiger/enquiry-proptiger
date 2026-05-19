@@ -126,7 +126,7 @@ export default function Hero({ setIsOpen }) {
 
         {/* Mobile — CTA */}
         <div style={{ background: '#0d1a24', padding: '14px 16px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-          <p style={{ fontFamily: F_JOST, fontSize: '13px', fontWeight: 600, color: 'rgba(255,255,255,0.55)', textAlign: 'center', margin: 0 }}>
+          <p style={{ fontFamily: F_JOST, fontSize: '13px', fontWeight: 600, color: '#fff', textAlign: 'center', margin: 0 }}>
             2 &amp; 3 BHK Affordable Residences
           </p>
           <p className="blink-price" style={{ fontFamily: F_JOST, fontSize: '26px', fontWeight: 700, color: 'var(--color-teal)', textAlign: 'center', lineHeight: 1, margin: 0 }}>
@@ -262,7 +262,7 @@ export default function Hero({ setIsOpen }) {
                 '70% Open Green Spaces',
                 'Spread across 11.3 Acres',
               ].map((line, i) => (
-                <p key={i} style={{ fontFamily: F_SANS, fontSize: '12px', lineHeight: 1.6, color: 'rgba(255,255,255,0.65)', fontWeight: 400, margin: 0, textAlign: 'center' }}>
+                <p key={i} style={{ fontFamily: F_SANS, fontSize: '12px', lineHeight: 1.6, color: '#fff', fontWeight: 400, margin: 0, textAlign: 'center' }}>
                   {line}
                 </p>
               ))}
@@ -282,7 +282,7 @@ export default function Hero({ setIsOpen }) {
                   background: 'rgba(255,255,255,0.04)',
                 }}>
                   <span style={{ fontSize: '13px', lineHeight: 1 }}>{b.icon}</span>
-                  <span style={{ fontFamily: F_SANS, fontSize: '9px', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.3)', textAlign: 'center', lineHeight: 1.2, whiteSpace: 'pre-line' }}>{b.label}</span>
+                  <span style={{ fontFamily: F_SANS, fontSize: '9px', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#fff', textAlign: 'center', lineHeight: 1.2, whiteSpace: 'pre-line' }}>{b.label}</span>
                 </div>
               ))}
             </div>
@@ -336,7 +336,7 @@ export default function Hero({ setIsOpen }) {
             display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '10px',
           }}>
             <div style={{ textAlign: 'center' }}>
-              <p style={{ fontFamily: F_SANS, fontSize: '12px', fontWeight: 600, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.06em', marginBottom: '4px' }}>
+              <p style={{ fontFamily: F_SANS, fontSize: '12px', fontWeight: 600, color: '#fff', letterSpacing: '0.06em', marginBottom: '4px' }}>
                 2 &amp; 3 BHK Affordable Flats From
               </p>
               <p className="blink-price" style={{ fontFamily: F_JOST, fontSize: '30px', fontWeight: 700, color: 'var(--color-teal)', lineHeight: 1, margin: 0 }}>
