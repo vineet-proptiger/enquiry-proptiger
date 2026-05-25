@@ -101,7 +101,7 @@ const LeadForm = ({ formName = 'Hero Form', btnText = 'Submit Details' }) => {
         style={{ fontFamily: F_SANS, width: '100%', padding: '10px 14px', border: '1.5px solid #e5e7eb', borderRadius: '8px', outline: 'none', fontSize: '14px', marginBottom: '10px' }} />
       <input type="text" name="projectName" required placeholder="Project Name" value={formData.projectName} onChange={handleChange}
         style={{ fontFamily: F_SANS, width: '100%', padding: '10px 14px', border: '1.5px solid #e5e7eb', borderRadius: '8px', outline: 'none', fontSize: '14px', marginBottom: '10px' }} />
-      <input type="text" name="sheetName" required placeholder="City Name (Sheet Name)" value={formData.sheetName} onChange={handleChange}
+      <input type="text" name="sheetName" required placeholder="City Name" value={formData.sheetName} onChange={handleChange}
         style={{ fontFamily: F_SANS, width: '100%', padding: '10px 14px', border: '1.5px solid #e5e7eb', borderRadius: '8px', outline: 'none', fontSize: '14px', marginBottom: '10px' }} />
       <input type="text" name="fullname" required placeholder="Enter full name" value={formData.fullname} onChange={handleChange}
         style={{ fontFamily: F_SANS, width: '100%', padding: '10px 14px', border: '1.5px solid #e5e7eb', borderRadius: '8px', outline: 'none', fontSize: '14px', marginBottom: '10px' }} />
