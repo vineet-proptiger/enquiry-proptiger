@@ -8,6 +8,8 @@ import { buildTrackingFields } from '../../lib/formMeta'
 const F_SANS = 'var(--font-sans), Open Sans, sans-serif'
 const F_JOST = 'var(--font-jost), Montserrat, sans-serif'
 
+const CITIES = ['Ahmedabad','Bangalore','Chennai','Gurgaon','Hyderabad','Indore','Jaipur','Kolkata','Lucknow','Mumbai','Noida','Pune']
+
 const LeadForm = ({ formName = 'Hero Form', btnText = 'Submit Details' }) => {
   const [formData, setFormData] = useState({ projectId: '', projectName: '', sheetName: '', fullname: '', email: '' })
   const [phone, setPhone] = useState('91')
@@ -15,6 +17,14 @@ const LeadForm = ({ formName = 'Hero Form', btnText = 'Submit Details' }) => {
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState('')
+  const [cityOpen, setCityOpen] = useState(false)
+
+  useEffect(() => {
+    if (!cityOpen) return
+    const close = (e) => { if (!e.target.closest('[data-city-dd]')) setCityOpen(false) }
+    document.addEventListener('mousedown', close)
+    return () => document.removeEventListener('mousedown', close)
+  }, [cityOpen])
 
   useEffect(() => {
     if (!success) return
@@ -34,6 +44,10 @@ const LeadForm = ({ formName = 'Hero Form', btnText = 'Submit Details' }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    if (!formData.sheetName) {
+      setError('Please select a city.')
+      return
+    }
     const localNumber = phone.slice(dialCode.length)
     if (!localNumber || localNumber.length < 6) {
       setError('Please enter a valid mobile number.')
@@ -101,8 +115,28 @@ const LeadForm = ({ formName = 'Hero Form', btnText = 'Submit Details' }) => {
         style={{ fontFamily: F_SANS, width: '100%', padding: '10px 14px', border: '1.5px solid #e5e7eb', borderRadius: '8px', outline: 'none', fontSize: '14px', marginBottom: '10px' }} />
       <input type="text" name="projectName" required placeholder="Project Name" value={formData.projectName} onChange={handleChange}
         style={{ fontFamily: F_SANS, width: '100%', padding: '10px 14px', border: '1.5px solid #e5e7eb', borderRadius: '8px', outline: 'none', fontSize: '14px', marginBottom: '10px' }} />
-      <input type="text" name="sheetName" required placeholder="City Name" value={formData.sheetName} onChange={handleChange}
-        style={{ fontFamily: F_SANS, width: '100%', padding: '10px 14px', border: '1.5px solid #e5e7eb', borderRadius: '8px', outline: 'none', fontSize: '14px', marginBottom: '10px' }} />
+      <div style={{ position: 'relative', marginBottom: '10px' }} data-city-dd>
+        <button type="button" onClick={() => setCityOpen(o => !o)}
+          style={{ fontFamily: F_SANS, width: '100%', padding: '10px 14px', border: '1.5px solid #e5e7eb', borderRadius: '8px', outline: 'none', fontSize: '14px', background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', color: formData.sheetName ? '#4A4B4D' : '#9ca3af' }}>
+          <span>{formData.sheetName || 'Select City'}</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+            style={{ transition: 'transform 0.2s', transform: cityOpen ? 'rotate(180deg)' : 'rotate(0deg)', flexShrink: 0 }}>
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </button>
+        {cityOpen && (
+          <div style={{ position: 'absolute', zIndex: 20, width: '100%', background: '#fff', border: '1px solid #e5e7eb', borderRadius: '8px', boxShadow: '0 4px 16px rgba(0,0,0,0.10)', marginTop: '4px', maxHeight: '176px', overflowY: 'auto' }} data-city-dd>
+            {CITIES.map(city => (
+              <div key={city} onMouseDown={() => { setFormData(f => ({ ...f, sheetName: city })); setCityOpen(false) }}
+                style={{ fontFamily: F_SANS, padding: '9px 14px', cursor: 'pointer', fontSize: '14px', color: '#374151', background: formData.sheetName === city ? '#f0f4fa' : 'transparent' }}
+                onMouseEnter={e => e.currentTarget.style.background = '#f9fafb'}
+                onMouseLeave={e => e.currentTarget.style.background = formData.sheetName === city ? '#f0f4fa' : 'transparent'}>
+                {city}
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
       <input type="text" name="fullname" required placeholder="Enter full name" value={formData.fullname} onChange={handleChange}
         style={{ fontFamily: F_SANS, width: '100%', padding: '10px 14px', border: '1.5px solid #e5e7eb', borderRadius: '8px', outline: 'none', fontSize: '14px', marginBottom: '10px' }} />
       <input type="email" name="email" placeholder="Email Id (optional)" value={formData.email} onChange={handleChange}
