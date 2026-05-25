@@ -8,12 +8,16 @@
 import * as lnt     from '../../../lib/lnt-island-cove-mahim/config'
 import * as optima  from '../../../lib/optima-rajarhat/config'
 import * as shriram from '../../../lib/shriram-codename-pudhiya/config'
+import * as formCfg from '../../../lib/form/config'
 
 const PROJECTS = {
   [lnt.PROJECT_ID]:     lnt,
   [optima.PROJECT_ID]:  optima,
   [shriram.PROJECT_ID]: shriram,
 }
+
+const FALLBACK_SHEET_WEBHOOK = formCfg.SHEET_WEBHOOK
+const FALLBACK_PROPTIGER_URL = formCfg.PROPTIGER_URL
 /* ────────────────────────────────────────────────────────────── */
 
 function clean(v) {
@@ -44,9 +48,10 @@ export async function POST(request) {
     }
 
     /* ── Required fields ── */
+    const countryCode = get('country_code') || '+91'
     let phone = get('phone').replace(/\D/g, '')
     if (phone.length > 10) phone = phone.slice(-10)
-    if (phone.length > 0 && phone.length < 10) {
+    if (phone.length > 0 && phone.length < 6) {
       return Response.json({ status: false, msg: 'Invalid phone number' })
     }
     const email = get('email')
@@ -87,9 +92,9 @@ export async function POST(request) {
     /* ── Project config (lookup from registry) ── */
     const projectConfig  = PROJECTS[projectId] || {}
     const cityId         = projectConfig.CITY_ID       || ''
-    const citySlug       = projectConfig.CITY_SLUG      || ''
-    const sheetWebhook   = projectConfig.SHEET_WEBHOOK  || ''
-    const PROPTIGER_URL  = projectConfig.PROPTIGER_URL  || ''
+    const citySlug       = projectConfig.CITY_SLUG      || get('city') || ''
+    const sheetWebhook   = projectConfig.SHEET_WEBHOOK  || FALLBACK_SHEET_WEBHOOK
+    const PROPTIGER_URL  = projectConfig.PROPTIGER_URL  || FALLBACK_PROPTIGER_URL
 
     /* ── 1. Google Sheet ── */
     const sheetPayload = new URLSearchParams({
@@ -102,7 +107,7 @@ export async function POST(request) {
       FirstName: firstName,
       LastName: lastName,
       Email: email,
-      Mobile: phone,
+      Mobile: `${countryCode}${phone}`,
       Comments: comments,
 
       utm_source: utmSource,
@@ -140,7 +145,7 @@ export async function POST(request) {
     const ptPayload = {
       name: `${firstName} ${lastName}`.trim(),
       email,
-      phone,
+      phone: `${countryCode}${phone}`,
       countryId: '1',
       source: utmSource,
 
