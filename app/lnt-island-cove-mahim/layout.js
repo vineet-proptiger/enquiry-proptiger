@@ -1,5 +1,8 @@
 import './lnt-theme.css'
 
+import Script from 'next/script'
+import { CITY_DISPLAY } from '../../lib/lnt-island-cove-mahim/config'
+
 export const metadata = {
   title: "L&T Island Cove Mahim | Luxury 2/3 BHK Apartments — Price Starting ₹3.50 Cr Onwards",
   description:
@@ -7,5 +10,15 @@ export const metadata = {
 }
 
 export default function LntIslandCoveMahimLayout({ children }) {
-  return children
+  return (
+    <>
+      <Script id="gtag-lnt-island" strategy="beforeInteractive">{`
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ 'city': '${CITY_DISPLAY}' });
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+      `}</Script>
+      {children}
+    </>
+  )
 }

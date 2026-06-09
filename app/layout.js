@@ -3,6 +3,7 @@ import { Open_Sans, Montserrat, Cormorant_Garamond } from "next/font/google";
 import localFont from "next/font/local";
 import { GoogleTagManager } from "@next/third-parties/google";
 import Script from "next/script";
+import { CITY_DISPLAY } from "../lib/config";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -41,6 +42,7 @@ export default function RootLayout({ children }) {
       >
         <Script id="gtag-init" strategy="beforeInteractive">
           {`window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({ 'city': '${CITY_DISPLAY}' });
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());`}
         </Script>

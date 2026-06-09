@@ -52,6 +52,8 @@ export default function ShriramCodenamePudhiya() {
       {/* Mobile Sticky Bottom Bar */}
       <div className="sticky-bottom-bar">
         <a
+          id="mobile-call"
+
           href="tel:+919718344024"
           className="flex-1 flex flex-col items-center justify-center gap-0.5 py-2 text-white"
           style={{ background: '#1a1a1a' }}

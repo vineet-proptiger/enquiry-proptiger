@@ -1,5 +1,8 @@
 import './optima-theme.css'
 
+import Script from 'next/script'
+import { CITY_DISPLAY } from '../../lib/optima-rajarhat/config'
+
 export const metadata = {
   title: 'Srijan Optima Rajarhat | Affordable 2 & 3 BHK Flats — Price Starting ₹65 Lacs*',
   description:
@@ -7,5 +10,15 @@ export const metadata = {
 }
 
 export default function OptimaRajarhatLayout({ children }) {
-  return children
+  return (
+    <>
+      <Script id="gtag-optima" strategy="beforeInteractive">{`
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ 'city': '${CITY_DISPLAY}' });
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+      `}</Script>
+      {children}
+    </>
+  )
 }
