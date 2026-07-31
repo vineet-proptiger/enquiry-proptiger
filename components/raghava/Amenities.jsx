@@ -40,7 +40,7 @@ const Amenities = ({ setIsOpen }) => {
                 position: 'relative', borderRadius: '14px', overflow: 'hidden',
                 cursor: 'pointer', aspectRatio: '16/11',
                 border: `2px solid ${hovered === idx ? 'var(--color-teal)' : 'transparent'}`,
-                boxShadow: hovered === idx ? '0 14px 36px rgba(74,140,152,0.2)' : '0 3px 12px rgba(0,0,0,0.09)',
+                boxShadow: hovered === idx ? '0 14px 36px rgba(184,149,106,0.2)' : '0 3px 12px rgba(0,0,0,0.09)',
                 transform: hovered === idx ? 'translateY(-5px) scale(1.01)' : 'translateY(0) scale(1)',
                 transition: 'all 0.32s cubic-bezier(0.4,0,0.2,1)',
               }}>
@@ -51,7 +51,7 @@ const Amenities = ({ setIsOpen }) => {
               <div style={{
                 position: 'absolute', bottom: 0, left: 0, right: 0,
                 background: hovered === idx
-                  ? 'linear-gradient(to top, rgba(52,106,116,0.90) 0%, transparent 80%)'
+                  ? 'linear-gradient(to top, rgba(158,123,79,0.90) 0%, transparent 80%)'
                   : 'linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 70%)',
                 padding: '32px 16px 14px',
                 transition: 'background 0.32s ease',

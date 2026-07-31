@@ -45,7 +45,7 @@ const Gallery = ({ setIsOpen }) => {
               style={{
                 position: 'relative', aspectRatio: '4/3',
                 borderRadius: '12px', overflow: 'hidden', cursor: 'pointer',
-                boxShadow: hovered === idx ? '0 12px 32px rgba(74,140,152,0.2)' : '0 2px 10px rgba(0,0,0,0.08)',
+                boxShadow: hovered === idx ? '0 12px 32px rgba(184,149,106,0.2)' : '0 2px 10px rgba(0,0,0,0.08)',
                 transform: hovered === idx ? 'translateY(-4px) scale(1.01)' : 'translateY(0) scale(1)',
                 transition: 'all 0.32s cubic-bezier(0.4,0,0.2,1)',
                 border: hovered === idx ? '2px solid var(--color-teal)' : '2px solid transparent',
@@ -56,7 +56,7 @@ const Gallery = ({ setIsOpen }) => {
 
               <div style={{
                 position: 'absolute', inset: 0,
-                background: 'linear-gradient(to top, rgba(74,140,152,0.75) 0%, transparent 55%)',
+                background: 'linear-gradient(to top, rgba(184,149,106,0.75) 0%, transparent 55%)',
                 opacity: hovered === idx ? 1 : 0,
                 transition: 'opacity 0.32s ease',
                 display: 'flex', alignItems: 'flex-end', padding: '14px 12px',

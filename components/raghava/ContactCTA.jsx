@@ -79,7 +79,7 @@ const ContactCTA = () => {
         ) : (
           <div style={{
             background: '#fff', borderRadius: '16px',
-            boxShadow: '0 4px 24px rgba(74,140,152,0.12)',
+            boxShadow: '0 4px 24px rgba(184,149,106,0.12)',
             border: '1px solid var(--color-teal-light)',
             overflow: 'hidden', display: 'flex', flexDirection: 'column', width: '100%',
             maxWidth: '500px', margin: '0 auto'

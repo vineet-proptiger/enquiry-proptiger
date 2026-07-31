@@ -93,7 +93,7 @@ export default function Hero({ setIsOpen }) {
         </div>
 
         {/* Mobile — 2×2 Specs */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', background: 'var(--color-bg, #F4F8F9)' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', background: 'var(--color-bg, #FAF6F0)' }}>
           {specs.map((s, i) => (
             <div key={i} style={{
               padding: '14px 16px',
@@ -140,7 +140,7 @@ export default function Hero({ setIsOpen }) {
               border: 'none', borderRadius: '6px',
               fontFamily: F_JOST, fontSize: '13px', fontWeight: 700,
               letterSpacing: '0.10em', textTransform: 'uppercase', cursor: 'pointer',
-              boxShadow: '0 4px 18px rgba(74,140,152,0.4)',
+              boxShadow: '0 4px 18px rgba(184,149,106,0.4)',
             }}
           >
             Book Site Visit
@@ -242,7 +242,7 @@ export default function Hero({ setIsOpen }) {
         {/* INFO STRIP — bottom 35% */}
         <div className="flex flex-row" style={{
           flex: 1,
-          background: 'var(--color-bg, #F4F8F9)',
+          background: 'var(--color-bg, #FAF6F0)',
           animation: 'heroSlideUp 0.8s 0.5s cubic-bezier(0.16,1,0.3,1) both',
           overflow: 'hidden',
         }}>
@@ -300,7 +300,7 @@ export default function Hero({ setIsOpen }) {
                 display: 'flex', flexDirection: 'column', justifyContent: 'center',
                 borderRight: i % 2 === 0 ? '1px solid rgba(13,26,36,0.1)' : 'none',
                 borderBottom: i < 2 ? '1px solid rgba(13,26,36,0.1)' : 'none',
-                background: 'var(--color-bg, #F4F8F9)',
+                background: 'var(--color-bg, #FAF6F0)',
               }}>
                 <p style={{ fontFamily: F_JOST, fontSize: s.val.length > 12 ? '17px' : '20px', fontWeight: 700, color: 'var(--color-dark)', lineHeight: 1.1, marginBottom: '3px', whiteSpace: 'nowrap' }}>{s.val}</p>
                 <p style={{ fontFamily: F_SANS, fontSize: '9px', fontWeight: 700, letterSpacing: '0.13em', textTransform: 'uppercase', color: '#6b7280', lineHeight: 1.35, whiteSpace: 'pre-line', margin: 0 }}>{s.lbl}</p>
@@ -352,7 +352,7 @@ export default function Hero({ setIsOpen }) {
                 border: 'none', borderRadius: '6px',
                 fontFamily: F_JOST, fontSize: '12px', fontWeight: 700,
                 letterSpacing: '0.10em', textTransform: 'uppercase', cursor: 'pointer',
-                boxShadow: '0 4px 18px rgba(74,140,152,0.4)',
+                boxShadow: '0 4px 18px rgba(184,149,106,0.4)',
                 transition: 'opacity 0.2s, transform 0.15s',
               }}
               onMouseEnter={e => { e.currentTarget.style.opacity = '0.88'; e.currentTarget.style.transform = 'translateY(-1px)' }}

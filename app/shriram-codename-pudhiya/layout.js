@@ -6,6 +6,17 @@ import Script from 'next/script'
 export const metadata = {
   title: 'Shriram Codename Pudhiya Chennai | 1, 2 & 3 BHK Apartments — Thirumazhisai',
   description: 'Shriram Codename Pudhiya — Premium 1, 2 & 3 BHK Apartments at Thirumazhisai, Chennai. Starting ₹32 Lakhs*. 8.9 Acres, 7 Towers, 1053 Apartments, 75% Open Space. Enquire Now.',
+  alternates: {
+    canonical: 'https://enquiry.proptiger.com/shriram-codename-pudhiya',
+  },
+  openGraph: {
+    title: 'Shriram Codename Pudhiya Chennai | 1, 2 & 3 BHK Apartments',
+    description: 'Shriram Codename Pudhiya — Premium 1, 2 & 3 BHK Apartments at Thirumazhisai, Chennai. Starting ₹32 Lakhs*. 8.9 Acres, 7 Towers, 1053 Apartments, 75% Open Space.',
+    url: 'https://enquiry.proptiger.com/shriram-codename-pudhiya',
+    siteName: 'PropTiger Enquiry',
+    locale: 'en_IN',
+    type: 'website',
+  },
 }
 
 export default function ShriramCodenamePudhiyaLayout({ children }) {

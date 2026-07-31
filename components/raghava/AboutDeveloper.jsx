@@ -158,7 +158,7 @@ const AboutDeveloper = ({ setIsOpen }) => (
           background: '#fff',
           display: 'flex', flexDirection: 'column', height: '100%',
           borderRadius: '16px', overflow: 'hidden',
-          boxShadow: '0 4px 24px rgba(74,140,152,0.1)',
+          boxShadow: '0 4px 24px rgba(184,149,106,0.1)',
           border: '1px solid var(--color-teal-light)',
         }} data-aos="fade-right" data-aos-delay="100">
 
@@ -224,7 +224,7 @@ const AboutDeveloper = ({ setIsOpen }) => (
         {/* Right — Contact Form */}
         <div style={{
           background: '#fff', borderRadius: '16px',
-          boxShadow: '0 4px 24px rgba(74,140,152,0.1)',
+          boxShadow: '0 4px 24px rgba(184,149,106,0.1)',
           border: '1px solid var(--color-teal-light)',
           overflow: 'hidden',
           display: 'flex', flexDirection: 'column', height: '100%',

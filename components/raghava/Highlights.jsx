@@ -33,7 +33,7 @@ const HighlightCard = ({ item, idx }) => {
         display: 'flex', flexDirection: 'column', alignItems: 'center',
         textAlign: 'center', cursor: 'default',
         transition: 'all 0.28s cubic-bezier(0.4,0,0.2,1)',
-        boxShadow: hovered ? '0 10px 32px rgba(74,140,152,0.15)' : '0 4px 15px rgba(0,0,0,0.05)',
+        boxShadow: hovered ? '0 10px 32px rgba(184,149,106,0.15)' : '0 4px 15px rgba(0,0,0,0.05)',
         transform: hovered ? 'translateY(-5px)' : 'translateY(0)',
         position: 'relative', overflow: 'hidden', height: '100%',
       }}>
@@ -52,7 +52,7 @@ const HighlightCard = ({ item, idx }) => {
         border: `2px solid ${hovered ? 'var(--color-teal)' : 'var(--color-teal-light)'}`,
         color: hovered ? '#fff' : 'var(--color-teal)',
         transition: 'all 0.3s ease',
-        boxShadow: hovered ? '0 0 20px rgba(74,140,152,0.3)' : 'none',
+        boxShadow: hovered ? '0 0 20px rgba(184,149,106,0.3)' : 'none',
       }}>
         {item.icon}
       </div>

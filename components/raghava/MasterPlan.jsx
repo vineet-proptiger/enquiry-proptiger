@@ -139,7 +139,7 @@ const MasterPlan = ({ setIsOpen }) => {
             <div style={{
               position: 'relative', borderRadius: '16px', overflow: 'hidden',
               border: '2px solid var(--color-teal)',
-              boxShadow: '0 10px 36px rgba(74,140,152,0.15)',
+              boxShadow: '0 10px 36px rgba(184,149,106,0.15)',
               height: '100%', minHeight: '400px',
             }}>
               <div style={{

@@ -112,7 +112,7 @@ const Location = () => {
           <div className="w-full lg:flex-1" data-aos="fade-left" style={{ minHeight: '420px' }}>
             <div style={{
               borderRadius: '16px', overflow: 'hidden',
-              boxShadow: '0 8px 32px rgba(74,140,152,0.15)',
+              boxShadow: '0 8px 32px rgba(184,149,106,0.15)',
               border: '2px solid var(--color-teal)',
               height: '100%', minHeight: '420px',
               position: 'relative',

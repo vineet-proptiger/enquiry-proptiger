@@ -32,6 +32,13 @@ const nephilm = localFont({
 });
 
 
+export const metadata = {
+  metadataBase: new URL("https://enquiry.proptiger.com"),
+  title: "PropTiger Enquiry | Premier Real Estate Projects & Residences",
+  description:
+    "Explore top residential projects across India with PropTiger including L&T Island Cove, Srijan Optima, Raghava Halo, and Shriram Codename Pudhiya.",
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
