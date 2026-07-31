@@ -130,7 +130,7 @@ export default function Hero({ setIsOpen }) {
             3 BHK Thoughtful High-Rise Residences
           </p>
           <p className="blink-price" style={{ fontFamily: F_JOST, fontSize: '26px', fontWeight: 700, color: 'var(--color-teal)', textAlign: 'center', lineHeight: 1, margin: 0 }}>
-            ₹1.6 Cr*
+            ₹1.7 Cr*
           </p>
           <button
             onClick={() => setIsOpen(true)}
@@ -340,7 +340,7 @@ export default function Hero({ setIsOpen }) {
                 3 BHK Thoughtful Residences From
               </p>
               <p className="blink-price" style={{ fontFamily: F_JOST, fontSize: '30px', fontWeight: 700, color: 'var(--color-teal)', lineHeight: 1, margin: 0 }}>
-                ₹1.6 Cr*
+                ₹1.7 Cr*
               </p>
             </div>
 

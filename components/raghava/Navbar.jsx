@@ -1,8 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
-import { logoImages } from '../../lib/raghava/images'
-
 const navLinks = [
   { name: 'Overview',   href: '#overview'   },
   { name: 'Highlights', href: '#highlights' },
@@ -15,12 +13,39 @@ const navLinks = [
 ]
 
 const ProjectLogo = () => (
-  <img
-    src={logoImages.tarc}
-    alt="Raghava Halo"
-    className="h-10 md:h-16 w-auto object-contain transition-all"
-    style={{ maxWidth: '250px' }}
-  />
+  <span
+    className="nav-logo"
+    aria-label="Raghava Halo — homepage"
+    style={{
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: '10px',
+      fontFamily: 'var(--font-heading, var(--font-playfair), "Playfair Display", Georgia, serif)',
+      fontSize: '1.25rem',
+      fontWeight: 600,
+      letterSpacing: '.06em',
+      color: 'var(--dark, #1c2b3a)',
+      textTransform: 'uppercase',
+    }}
+  >
+    <span
+      className="nav-logo-mark"
+      aria-hidden="true"
+      style={{
+        display: 'inline-block',
+        width: '22px',
+        height: '22px',
+        borderRadius: '50%',
+        border: '3.5px solid var(--gold, #b8956a)',
+        boxShadow: '0 0 0 4.5px rgba(184, 149, 106, 0.2)',
+        flexShrink: 0,
+        marginRight: '2px',
+      }}
+    />
+    <span>
+      Raghava <em style={{ fontStyle: 'normal', color: 'var(--gold, #b8956a)' }}>Halo</em>
+    </span>
+  </span>
 )
 
 const Navbar = ({ setIsOpen }) => {

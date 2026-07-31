@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { logoImages } from "../../../lib/raghava/images";
 import AosInit from "../../../components/raghava/AosInit";
 
 const GOLD = "var(--color-teal)";
@@ -33,16 +32,41 @@ export default function PrivacyPolicy() {
         ></div>
 
         <div className="container mx-auto px-4 md:px-8 flex items-center justify-between h-[80px]">
-          <Link href="/raghava" className="flex items-center">
-            <img
-              src={logoImages.tarc}
-              alt="Raghava Halo"
-              className="h-10 md:h-16 w-auto object-contain"
-              style={{ maxWidth: '250px' }}
-            />
+          <Link href="/raghava-halo-kondapur" className="flex items-center no-underline">
+            <span
+              aria-label="Raghava Halo — homepage"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '10px',
+                fontFamily: 'var(--font-heading, var(--font-playfair), "Playfair Display", Georgia, serif)',
+                fontSize: '1.25rem',
+                fontWeight: 600,
+                letterSpacing: '.06em',
+                color: '#1c2b3a',
+                textTransform: 'uppercase',
+              }}
+            >
+              <span
+                aria-hidden="true"
+                style={{
+                  display: 'inline-block',
+                  width: '22px',
+                  height: '22px',
+                  borderRadius: '50%',
+                  border: '3.5px solid #b8956a',
+                  boxShadow: '0 0 0 4.5px rgba(184, 149, 106, 0.2)',
+                  flexShrink: 0,
+                  marginRight: '2px',
+                }}
+              />
+              <span>
+                Raghava <em style={{ fontStyle: 'normal', color: '#b8956a' }}>Halo</em>
+              </span>
+            </span>
           </Link>
           <Link
-            href="/raghava"
+            href="/raghava-halo-kondapur"
             className="btn-teal shadow-lg !text-[11px] !px-3 !py-2 sm:!text-sm sm:!px-6 sm:!py-3"
           >
             <span className="hidden sm:inline">BACK TO HOME</span>
@@ -79,7 +103,7 @@ export default function PrivacyPolicy() {
             style={{ fontFamily: "var(--font-sans)" }}
           >
             <Link
-              href="/raghava"
+              href="/raghava-halo-kondapur"
               className="hover:text-white transition-colors"
               style={{ color: "var(--color-teal)" }}
             >
@@ -340,7 +364,7 @@ export default function PrivacyPolicy() {
         >
           &copy; 2026 Raghava Halo. All rights reserved |{" "}
           <Link
-            href="/raghava"
+            href="/raghava-halo-kondapur"
             style={{ color: "var(--color-teal)", textDecoration: "none" }}
           >
             Back to Home

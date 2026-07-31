@@ -9,7 +9,7 @@ const locationItems = [
   { name: 'CHIREC International School', subtext: 'K-12 Education', time: '8 min', icon: <BookOpen size={20} /> },
   { name: 'AMB Cinemas & Mall', subtext: 'Entertainment & Retail', time: '10 min', icon: <Trophy size={20} /> },
   { name: 'ISB Hyderabad', subtext: 'Business School', time: '12 min', icon: <Building size={20} /> },
-  { name: 'Financial District', subtext: 'IT & Business Hub', time: '15 min', icon: <Building2 size={20} /> },
+  // { name: 'Financial District', subtext: 'IT & Business Hub', time: '15 min', icon: <Building2 size={20} /> },
   { name: 'Continental & Care Hospitals', subtext: 'Healthcare', time: '15 min', icon: <HeartPulse size={20} /> },
   { name: 'HITEC City', subtext: 'IT Hub', time: '20 min', icon: <MapPin size={20} /> },
 ];

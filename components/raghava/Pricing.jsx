@@ -8,7 +8,7 @@ const units = [
   {
     type: "3 BHK (The Essential)",
     size: "1,800 Sq.ft.",
-    price: "₹1.6 Cr*",
+    price: "₹1.7 Cr*",
     oldPrice: null,
     btnText: "Get Cost Sheet",
     features: ["Effortless Layout", "Expansive Balcony", "52-Storey High-Rise View"],

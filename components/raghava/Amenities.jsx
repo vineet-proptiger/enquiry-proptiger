@@ -29,7 +29,7 @@ const Amenities = ({ setIsOpen }) => {
           <div style={{ width: '60px', height: '3px', background: 'linear-gradient(90deg, var(--color-teal), var(--color-teal-light))', borderRadius: '2px', margin: '8px auto 12px' }} />
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {amenityImages.map((item, idx) => (
             <div key={idx}
               onClick={() => setLightbox(idx)}

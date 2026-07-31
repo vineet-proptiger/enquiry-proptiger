@@ -20,7 +20,7 @@ const Footer = () => (
       </div>
       <p style={{ fontSize: '15px', color: '#bbb', fontFamily: F_SANS, lineHeight: 1.8, marginBottom: '32px', textAlign: 'justify' }}
         data-aos="fade-in" data-aos-delay="100">
-        Raghava Halo is a landmark high-rise residential project set across 5.5 acres in Hyderabad. Featuring three imposing 52-storey towers with over 1,000 thoughtfully planned 3 BHK residences (1,800–2,455 Sq.ft.) and an expansive 90,000 SFT Wellness Clubhouse, Raghava Halo is built on the philosophy that true luxury is a home that works effortlessly every single day. Priced from ₹1.6 Cr* onwards, it represents the absolute pinnacle of functional elegance and enduring architectural quality.
+        Raghava Halo is a landmark high-rise residential project set across 5.5 acres in Hyderabad. Featuring three imposing 52-storey towers with over 1,000 thoughtfully planned 3 BHK residences (1,800–2,455 Sq.ft.) and an expansive 90,000 SFT Wellness Clubhouse, Raghava Halo is built on the philosophy that true luxury is a home that works effortlessly every single day. Priced from ₹1.7 Cr* onwards, it represents the absolute pinnacle of functional elegance and enduring architectural quality.
       </p>
     </div>
 
@@ -29,7 +29,7 @@ const Footer = () => (
         &copy; 2026 Raghava Halo. All rights reserved.
       </p>
       <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6">
-        <Link href="/raghava/privacy-policy" style={{ fontSize: '13px', color: 'var(--color-teal)', fontFamily: F_SANS }}>
+        <Link href="/raghava-halo-kondapur/privacy-policy" style={{ fontSize: '13px', color: 'var(--color-teal)', fontFamily: F_SANS }}>
           Privacy Policy
         </Link>
       </div>
