@@ -75,7 +75,7 @@ export default function ShriramCodenamePudhiya() {
           <span style={{ fontSize: '9px', fontWeight: '600', letterSpacing: '0.04em' }}>Enquire</span>
         </button>
         <a
-          href="https://wa.me/919718344024?text=Hi%20I%20am%20interested%20in%20Shriram%20Codename%20Pudhiya"
+          href="https://wa.me/919560582493?text=Hi%20I%20am%20interested%20in%20Shriram%20Codename%20Pudhiya"
           target="_blank" rel="noopener noreferrer"
           className="flex-1 flex flex-col items-center justify-center gap-0.5 py-2 text-white"
           style={{ background: '#25D366' }}
