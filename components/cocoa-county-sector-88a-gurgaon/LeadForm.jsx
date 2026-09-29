@@ -182,7 +182,7 @@ const LeadForm = ({ formName = 'Hero Form', btnText = 'Submit Details', isTransp
         />
       </div>
 
-      <input type="text" name="fullname" required placeholder="First Name" value={formData.fullname} onChange={handleChange}
+      <input type="text" name="fullname" required placeholder="Full Name" value={formData.fullname} onChange={handleChange}
         className={dynamicInputClass} style={dynamicInputStyle} />
       <input type="email" name="email" placeholder="Email Id (optional)" value={formData.email} onChange={handleChange}
         className={dynamicInputClass} style={dynamicInputStyle} />

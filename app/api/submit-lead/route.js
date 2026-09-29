@@ -73,7 +73,7 @@ export async function POST(request) {
     const projectName = get('projectName')
     const nameParts = fullName.trim().split(/\s+/)
     const firstName = nameParts[0] || ''
-    const lastName = nameParts[1] || firstName
+    const lastName = nameParts.slice(1).join(' ') || ''
 
     /* ── Tracking ── */
     const utmSource = get('utm_source') || 'Microsite'
