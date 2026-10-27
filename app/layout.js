@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Open_Sans, Montserrat, Cormorant_Garamond } from "next/font/google";
+import { Open_Sans, Montserrat, Cormorant_Garamond, Poppins } from "next/font/google";
 import localFont from "next/font/local";
 import { GoogleTagManager } from "@next/third-parties/google";
 import Script from "next/script";
@@ -25,6 +25,13 @@ const cormorant = Cormorant_Garamond({
   display: "swap",
 });
 
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-poppins",
+  display: "swap",
+});
+
 const nephilm = localFont({
   src: "../public/fonts/Nephilm.otf",
   variable: "--font-nephilm",
@@ -44,7 +51,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <GoogleTagManager gtmId="GTM-575H8R87" />
       <body
-        className={`${openSans.variable} ${montserrat.variable} ${cormorant.variable} ${nephilm.variable} font-sans text-dark antialiased`}
+        className={`${openSans.variable} ${montserrat.variable} ${cormorant.variable} ${poppins.variable} ${nephilm.variable} font-sans text-dark antialiased`}
       >
         <Script id="gtag-init" strategy="beforeInteractive">
           {`window.dataLayer = window.dataLayer || [];

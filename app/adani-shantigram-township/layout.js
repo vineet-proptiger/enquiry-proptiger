@@ -1,42 +1,6 @@
 import './adani-theams.css'
-import { Poppins, Open_Sans, Montserrat, Cormorant_Garamond } from 'next/font/google'
 import { CITY_DISPLAY } from '../../lib/adani-shantigram-township/config'
-import localFont from 'next/font/local'
 import Script from 'next/script'
-
-const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800'],
-  variable: '--font-poppins',
-  display: 'swap',
-})
-
-const openSans = Open_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-sans',
-  display: 'swap',
-})
-
-const montserrat = Montserrat({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-jost',
-  display: 'swap',
-})
-
-const cormorant = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-serif',
-  display: 'swap',
-})
-
-const nephilm = localFont({
-  src: '../../public/fonts/Nephilm.otf',
-  variable: '--font-nephilm',
-  display: 'swap',
-})
 
 export const metadata = {
   metadataBase: new URL('https://enquiry.proptiger.com'),
@@ -77,7 +41,7 @@ export default function AdaniLayout({ children }) {
   return (
     <div className="nested-layout-wrapper">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-      <div className={`${poppins.variable} ${openSans.variable} ${montserrat.variable} ${cormorant.variable} ${nephilm.variable} font-sans text-dark antialiased`}>
+      <div className="font-sans text-dark antialiased">
         <Script id="gtag-init-adani">
           {`window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({ 'city': '${CITY_DISPLAY}' });

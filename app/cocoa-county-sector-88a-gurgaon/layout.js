@@ -1,45 +1,9 @@
 import './cocoa-theme.css'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-import { Open_Sans, Montserrat, Cormorant_Garamond, Poppins } from 'next/font/google'
 import { CITY_DISPLAY } from '../../lib/cocoa-county-sector-88a-gurgaon/config'
-import localFont from 'next/font/local'
 import { GoogleTagManager } from '@next/third-parties/google'
 import Script from 'next/script'
-
-const openSans = Open_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-sans',
-  display: 'swap',
-})
-
-const montserrat = Montserrat({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-jost',
-  display: 'swap',
-})
-
-const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-poppins',
-  display: 'swap',
-})
-
-const cormorant = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-serif',
-  display: 'swap',
-})
-
-const nephilm = localFont({
-  src: '../../public/fonts/Nephilm.otf',
-  variable: '--font-nephilm',
-  display: 'swap',
-})
 
 export const metadata = {
   metadataBase: new URL('https://cocoacountysector88a.co.in'),
@@ -111,7 +75,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </div>
-      <div className={`${openSans.variable} ${montserrat.variable} ${cormorant.variable} ${nephilm.variable} ${poppins.variable} font-sans text-dark antialiased`}>
+      <div className="font-sans text-dark antialiased">
         <Script id="gtag-init" strategy="beforeInteractive">
           {`window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({ 'city': '${CITY_DISPLAY}' });
