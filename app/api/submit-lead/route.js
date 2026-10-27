@@ -9,6 +9,7 @@ import * as optima  from '../../../lib/optima-rajarhat/config'
 import * as shriram from '../../../lib/shriram-codename-pudhiya/config'
 import * as raghava from '../../../lib/raghava/config'
 import * as cocoa from '../../../lib/cocoa-county-sector-88a-gurgaon/config'
+import * as adani from '../../../lib/adani-shantigram-township/config'
 import * as formCfg from '../../../lib/form/config'
 
 const PROJECTS = {
@@ -17,6 +18,7 @@ const PROJECTS = {
   [shriram.PROJECT_ID]: shriram,
   [raghava.PROJECT_ID]: raghava,
   [cocoa.PROJECT_ID]: cocoa,
+  [adani.PROJECT_ID]: adani,
 }
 
 const FALLBACK_SHEET_WEBHOOK = formCfg.SHEET_WEBHOOK

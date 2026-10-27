@@ -51,6 +51,18 @@ export default function sitemap() {
       priority: 0.5,
     },
     {
+      url: `${baseUrl}/adani-shantigram-township`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 1,
+    },
+    {
+      url: `${baseUrl}/adani-shantigram-township/privacy-policy`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
+    {
       url: `${baseUrl}/form`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
