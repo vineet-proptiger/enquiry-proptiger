@@ -63,6 +63,30 @@ export default function sitemap() {
       priority: 0.5,
     },
     {
+      url: `${baseUrl}/uk-celestique-garden`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 1,
+    },
+    {
+      url: `${baseUrl}/uk-celestique-garden/privacy-policy`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/spre-villa-plots-khapoli`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 1,
+    },
+    {
+      url: `${baseUrl}/spre-villa-plots-khapoli/privacy-policy`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
+    {
       url: `${baseUrl}/form`,
       lastModified: new Date(),
       changeFrequency: 'monthly',

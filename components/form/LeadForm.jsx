@@ -14,6 +14,7 @@ const LeadForm = ({ formName = 'Hero Form', btnText = 'Submit Details' }) => {
   const [formData, setFormData] = useState({ projectId: '', projectName: '', sheetName: '', fullname: '', email: '' })
   const [phone, setPhone] = useState('91')
   const [dialCode, setDialCode] = useState('91')
+  const [countryIso, setCountryIso] = useState('in')
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState('')
@@ -33,6 +34,7 @@ const LeadForm = ({ formName = 'Hero Form', btnText = 'Submit Details' }) => {
       setFormData({ projectId: '', projectName: '', sheetName: '', fullname: '', email: '' })
       setPhone('91')
       setDialCode('91')
+      setCountryIso('in')
     }, 4000)
     return () => clearTimeout(t)
   }, [success])
@@ -61,6 +63,7 @@ const LeadForm = ({ formName = 'Hero Form', btnText = 'Submit Details' }) => {
     payload.append('email', formData.email)
     payload.append('phone', phone.slice(dialCode.length))
     payload.append('country_code', `+${dialCode}`)
+    payload.append('country_iso', countryIso)
     payload.append('projectId', formData.projectId)
     payload.append('projectName', formData.projectName)
     payload.append('form_name', formName)
@@ -146,7 +149,11 @@ const LeadForm = ({ formName = 'Hero Form', btnText = 'Submit Details' }) => {
         <PhoneInput
           country={'in'}
           value={phone}
-          onChange={(value, data) => { setPhone(value); setDialCode(data.dialCode) }}
+          onChange={(value, data) => {
+            setPhone(value)
+            setDialCode(data?.dialCode || '91')
+            setCountryIso(data?.countryCode || 'in')
+          }}
           placeholder="Enter mobile number"
           inputStyle={{ width: '100%', fontFamily: F_SANS, height: '42px', borderColor: '#d1d5db', borderRadius: '6px' }}
           buttonStyle={{ borderColor: '#d1d5db', borderRadius: '6px 0 0 6px', background: '#f9fafb' }}

@@ -10,6 +10,8 @@ import * as shriram from '../../../lib/shriram-codename-pudhiya/config'
 import * as raghava from '../../../lib/raghava/config'
 import * as cocoa from '../../../lib/cocoa-county-sector-88a-gurgaon/config'
 import * as adani from '../../../lib/adani-shantigram-township/config'
+import * as ukCelestique from '../../../lib/uk-celestique-garden/config'
+import * as spreVilla from '../../../lib/spre-villa-plots-khapoli/config'
 import * as formCfg from '../../../lib/form/config'
 
 const PROJECTS = {
@@ -19,10 +21,81 @@ const PROJECTS = {
   [raghava.PROJECT_ID]: raghava,
   [cocoa.PROJECT_ID]: cocoa,
   [adani.PROJECT_ID]: adani,
+  [ukCelestique.PROJECT_ID]: ukCelestique,
+  [spreVilla.PROJECT_ID]: spreVilla,
 }
 
 const FALLBACK_SHEET_WEBHOOK = formCfg.SHEET_WEBHOOK
 const FALLBACK_PROPTIGER_URL = formCfg.PROPTIGER_URL
+
+const COUNTRY_ID_BY_ISO = {
+  in: '1',   // India
+  ae: '2',   // UAE
+  us: '3',   // USA
+  gb: '4',   // UK
+  sg: '5',   // Singapore
+  au: '6',   // Australia
+  ca: '7',   // Canada
+  sa: '8',   // Saudi Arabia
+  kw: '9',   // Kuwait
+  qa: '10',  // Qatar
+  om: '11',  // Oman
+  bh: '12',  // Bahrain
+  my: '13',  // Malaysia
+  de: '14',  // Germany
+  nz: '15',  // New Zealand
+  za: '16',  // South Africa
+  fr: '17',  // France
+  hk: '18',  // Hong Kong
+  id: '19',  // Indonesia
+  ie: '20',  // Ireland
+  it: '21',  // Italy
+  jp: '22',  // Japan
+  ke: '23',  // Kenya
+  nl: '24',  // Netherlands
+  ng: '25',  // Nigeria
+  ph: '26',  // Philippines
+  ru: '27',  // Russia
+  es: '28',  // Spain
+  lk: '29',  // Sri Lanka
+  se: '30',  // Sweden
+  ch: '31',  // Switzerland
+  th: '32',  // Thailand
+}
+
+const COUNTRY_ID_BY_DIAL_CODE = {
+  '+91': '1',   // India
+  '+971': '2',  // UAE
+  '+1': '3',    // USA / Canada
+  '+44': '4',   // UK
+  '+65': '5',   // Singapore
+  '+61': '6',   // Australia
+  '+966': '8',  // Saudi Arabia
+  '+965': '9',  // Kuwait
+  '+974': '10', // Qatar
+  '+968': '11', // Oman
+  '+973': '12', // Bahrain
+  '+60': '13',  // Malaysia
+  '+49': '14',  // Germany
+  '+64': '15',  // New Zealand
+  '+27': '16',  // South Africa
+  '+33': '17',  // France
+  '+852': '18', // Hong Kong
+  '+62': '19',  // Indonesia
+  '+353': '20', // Ireland
+  '+39': '21',  // Italy
+  '+81': '22',  // Japan
+  '+254': '23', // Kenya
+  '+31': '24',  // Netherlands
+  '+234': '25', // Nigeria
+  '+63': '26',  // Philippines
+  '+7': '27',   // Russia
+  '+34': '28',  // Spain
+  '+94': '29',  // Sri Lanka
+  '+46': '30',  // Sweden
+  '+41': '31',  // Switzerland
+  '+66': '32',  // Thailand
+}
 /* ────────────────────────────────────────────────────────────── */
 
 function clean(v) {
@@ -53,9 +126,15 @@ export async function POST(request) {
     }
 
     /* ── Required fields ── */
-    const countryCode = get('country_code') || '+91'
+    const rawCountryCode = get('country_code')
+    const countryCode = rawCountryCode ? (rawCountryCode.startsWith('+') ? rawCountryCode : `+${rawCountryCode}`) : '+91'
+    const countryIso = get('country_iso').toLowerCase()
+
     let phone = get('phone').replace(/\D/g, '')
-    if (phone.length > 10) phone = phone.slice(-10)
+    // For Indian (+91) numbers, preserve standard 10-digit format
+    if (countryCode === '+91') {
+      if (phone.length > 10) phone = phone.slice(-10)
+    }
     if (phone.length > 0 && phone.length < 6) {
       return Response.json({ status: false, msg: 'Invalid phone number' })
     }
@@ -69,6 +148,8 @@ export async function POST(request) {
     if (projectId === '') {
       return Response.json({ status: false })
     }
+
+    const countryId = COUNTRY_ID_BY_ISO[countryIso] || COUNTRY_ID_BY_DIAL_CODE[countryCode] || '1'
 
     /* ── User data ── */
     const fullName = get('fullname')
@@ -151,7 +232,7 @@ export async function POST(request) {
       name: `${firstName} ${lastName}`.trim(),
       email,
       phone: `${countryCode}${phone}`,
-      countryId: '1',
+      countryId: countryId,
       source: utmSource,
 
       projectId,

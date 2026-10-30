@@ -18,6 +18,22 @@ const nextConfig = {
         source: '/adani-shantigram-township/home/:path*',
         destination: '/images/adani-shantigram-township/home/:path*',
       },
+      {
+        source: '/uk-celestique-garden/images/:path*',
+        destination: '/images/uk-celestique-garden/:path*',
+      },
+      {
+        source: '/uk-celestique-garden/favicon/:path*',
+        destination: '/images/uk-celestique-garden/favicon/:path*',
+      },
+      {
+        source: '/spre-villa-plots-khapoli/images/:path*',
+        destination: '/images/spre-villa-plots-khapoli/:path*',
+      },
+      {
+        source: '/spre-villa-plots-khapoli/favicon/:path*',
+        destination: '/images/spre-villa-plots-khapoli/favicon/:path*',
+      },
     ]
   },
 }
