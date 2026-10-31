@@ -114,13 +114,13 @@ const LeadForm = ({ formName = 'Hero Form', btnText = 'Submit Now' }) => {
 
   if (success) return (
     <div className="text-center py-6">
-      <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 bg-[#111111]/20 border-2 border-[#8B6A34]">
-        <svg className="w-8 h-8 text-[#8B6A34]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 bg-[#EEF4FC] border-2 border-[#003792]">
+        <svg className="w-8 h-8 text-[#003792]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
         </svg>
       </div>
-      <h4 className="text-xl font-bold text-white mb-2">Thank You!</h4>
-      <p className="text-neutral-300 text-sm font-medium">Our team will contact you shortly.</p>
+      <h4 className="text-xl font-bold text-[#0c2340] mb-2">Thank You!</h4>
+      <p className="text-neutral-500 text-sm font-medium">Our team will contact you shortly.</p>
     </div>
   )
 
@@ -159,7 +159,7 @@ const LeadForm = ({ formName = 'Hero Form', btnText = 'Submit Now' }) => {
       <button
         type="submit"
         disabled={loading}
-        className="lead-form-btn shadow-[0_4px_20px_rgba(139,106,52,0.4)]"
+        className="lead-form-btn shadow-[0_4px_20px_rgba(0,55,146,0.35)]"
       >
         {loading ? 'Submitting...' : btnText}
       </button>
@@ -171,7 +171,7 @@ const LeadForm = ({ formName = 'Hero Form', btnText = 'Submit Now' }) => {
           required
           defaultChecked
           className="mt-1 shrink-0 cursor-pointer"
-          style={{ accentColor: '#8B6A34', width: '16px', height: '16px' }}
+          style={{ accentColor: '#003792', width: '16px', height: '16px' }}
         />
         <label
           htmlFor="consentCheck"
@@ -187,7 +187,7 @@ const LeadForm = ({ formName = 'Hero Form', btnText = 'Submit Now' }) => {
           <a
             href="/spre-villa-plots-khapoli/privacy-policy"
             target="_blank"
-            style={{ color: '#8B6A34', fontWeight: 700, textDecoration: 'underline' }}
+            style={{ color: '#003792', fontWeight: 700, textDecoration: 'underline' }}
           >
             privacy policy
           </a>{' '}

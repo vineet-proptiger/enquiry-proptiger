@@ -166,15 +166,15 @@ const ContactForm = () => {
       {error && <p style={{ color: 'red', fontSize: '12px' }}>{error}</p>}
 
       <label style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', cursor: 'pointer' }}>
-        <input type="checkbox" required defaultChecked style={{ accentColor: '#111111', marginTop: '2px', flexShrink: 0 }} />
+        <input type="checkbox" required defaultChecked style={{ accentColor: '#003792', marginTop: '2px', flexShrink: 0 }} />
         <span style={{ fontSize: '12px', color: '#777', fontFamily: F_SANS, lineHeight: 1.5 }}>
-          I agree to receive updates as per the <Link href="/spre-villa-plots-khapoli/privacy-policy" prefetch={false} style={{ color: '#2563eb', textDecoration: 'underline' }}>Privacy Policy</Link>.
+          I agree to receive updates as per the <Link href="/spre-villa-plots-khapoli/privacy-policy" prefetch={false} style={{ color: '#003792', textDecoration: 'underline' }}>Privacy Policy</Link>.
         </span>
       </label>
 
       <button type="submit" disabled={loading}
-        className="btn-gold w-full"
-        style={{ padding: '14px', marginTop: '4px' }}>
+        className="btn-gold w-full cursor-pointer"
+        style={{ padding: '14px', marginTop: '4px', background: '#003792', borderColor: '#003792' }}>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" />
         </svg>
@@ -185,16 +185,17 @@ const ContactForm = () => {
 }
 
 const AboutDeveloper = ({ setIsOpen }) => (
-  <section id="developer" className="py-10 sm:py-14 bg-[var(--color-bg-muted)] border-b border-gray-100">
+  <section id="developer" className="py-10 sm:py-14 bg-white border-b border-gray-100">
     <div className="container mx-auto px-4 md:px-8">
 
       {/* Heading */}
       <div className="text-center mb-10" data-aos="fade-up">
-        <span className="text-[#8B6A34] font-bold text-[13px] sm:text-[14px] tracking-[2.5px] uppercase mb-2.5 block">
+        <div className="w-12 h-1 bg-[#003792] rounded-full mx-auto mb-3" />
+        <span className="text-[#003792] font-bold text-[13px] sm:text-[14px] tracking-[2.5px] uppercase mb-2.5 block">
           DEVELOPER PROFILE
         </span>
-        <h2 className="text-[#111111] text-[22px] sm:text-[26px] md:text-[30px] font-extrabold m-0 leading-tight">
-          Crafted by Sobha
+        <h2 className="text-[#0c2340] text-[22px] sm:text-[26px] md:text-[30px] font-extrabold m-0 leading-tight">
+          Crafted by Shapoorji Pallonji Real Estate (SPRE)
         </h2>
       </div>
 
@@ -206,18 +207,18 @@ const AboutDeveloper = ({ setIsOpen }) => (
           background: '#fff',
           display: 'flex', flexDirection: 'column', height: '100%',
           borderRadius: '16px', overflow: 'hidden',
-          boxShadow: '0 4px 24px var(--color-shadow-card)',
-          border: '1px solid var(--color-gold-light)',
+          boxShadow: '0 4px 24px rgba(0, 55, 146, 0.08)',
+          border: '1px solid #D1E1F5',
         }} data-aos="fade-right" data-aos-delay="100">
 
           {/* Dark Header */}
           <div style={{
-            background: 'linear-gradient(135deg, #000000, #111111)',
+            background: 'linear-gradient(135deg, #001F54, #003792)',
             padding: '18px 24px', position: 'relative', overflow: 'hidden',
           }}>
             <div style={{
               position: 'absolute', top: 0, left: 0, right: 0, height: '2px',
-              background: 'linear-gradient(90deg, #8B6A34, #A68245)',
+              background: 'linear-gradient(90deg, #003792, #2563EB)',
             }} />
             <div style={{ display: 'flex', alignItems: 'center', gap: '14px', position: 'relative' }}>
               <div style={{
@@ -233,7 +234,7 @@ const AboutDeveloper = ({ setIsOpen }) => (
               </div>
               <div>
                 <h3 style={{ fontFamily: F_JOST, fontWeight: '800', fontSize: '18px', color: '#fff', margin: '0 0 4px', letterSpacing: '-0.01em' }}>
-                  Sobha
+                  Shapoorji Pallonji Real Estate (SPRE)
                 </h3>
 
               </div>
@@ -244,32 +245,13 @@ const AboutDeveloper = ({ setIsOpen }) => (
           <div style={{ padding: '24px 28px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <div>
               <p className='text-justify' style={{ color: '#555', fontFamily: F_SANS, lineHeight: 1.8, fontSize: '14px', margin: '0 0 20px' }}>
-                SOBHA’s journey of craftsmanship encompasses 599 iconic projects across residential, non-residential, commercial, and contractual spaces, spanning an expansive 156.45 million sq. ft. (14.53 million sq. m.) of delivered perfection.
+                With a rich heritage spanning over 150 years, Shapoorji Pallonji Real Estate (SPRE) is renowned for engineering excellence, landmark infrastructure, and pioneering living communities across India. SPRE brings its master-planning vision to Khopoli, creating an extraordinary 900-acre natural community surrounded by pristine forests, wellness sanctuaries, and premium plotted retreats designed for generational value.
               </p>
             </div>
 
-            {/* Stats */}
-            {/* <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px', marginBottom: '22px' }}>
-              {[
-                { value: '15+', label: 'Years of Experience' },
-                { value: '20+', label: 'Projects Delivered' },
-                { value: '10000+', label: 'Happy Families' },
-              ].map((stat, i) => (
-                <div key={i} style={{
-                  textAlign: 'center', padding: '14px 8px',
-                  background: 'var(--color-bg-muted)',
-                  borderRadius: '10px',
-                  border: '1px solid var(--color-gold-light)',
-                }}>
-                  <p style={{ fontSize: '22px', fontWeight: '800', color: GOLD_DARK, fontFamily: F_JOST, margin: 0 }}>{stat.value}</p>
-                  <p style={{ fontSize: '10px', color: '#888', fontFamily: F_SANS, marginTop: '4px', fontWeight: '600', textTransform: 'uppercase', lineHeight: 1.3 }}>{stat.label}</p>
-                </div>
-              ))}
-            </div> */}
-
             <button onClick={() => setIsOpen(true)}
-              className="btn-gold"
-              style={{ padding: '11px 28px', fontSize: '13px', width: '100%' }}>
+              className="btn-gold cursor-pointer"
+              style={{ padding: '11px 28px', fontSize: '13px', width: '100%', background: '#003792', borderColor: '#003792' }}>
               Know More
             </button>
           </div>
@@ -278,20 +260,20 @@ const AboutDeveloper = ({ setIsOpen }) => (
         {/* Right — Contact Form */}
         <div style={{
           background: '#fff', borderRadius: '16px',
-          boxShadow: '0 4px 24px var(--color-shadow-card)',
-          border: '1px solid var(--color-gold-light)',
+          boxShadow: '0 4px 24px rgba(0, 55, 146, 0.08)',
+          border: '1px solid #D1E1F5',
           overflow: 'hidden',
           display: 'flex', flexDirection: 'column', height: '100%',
         }} data-aos="fade-left" data-aos-delay="200">
 
           {/* Form Header */}
           <div style={{
-            background: 'linear-gradient(135deg, #000000, #111111)',
+            background: 'linear-gradient(135deg, #001F54, #003792)',
             padding: '18px 24px', position: 'relative', overflow: 'hidden'
           }}>
             <div style={{
               position: 'absolute', top: 0, left: 0, right: 0, height: '2px',
-              background: 'linear-gradient(90deg, #8B6A34, #A68245)',
+              background: 'linear-gradient(90deg, #003792, #2563EB)',
             }} />
             <h3 style={{
               fontFamily: F_JOST, fontWeight: '800', fontSize: '18px',
@@ -299,7 +281,7 @@ const AboutDeveloper = ({ setIsOpen }) => (
             }}>
               Book Site Visit Today
             </h3>
-            <p style={{ fontFamily: F_SANS, fontSize: '12px', color: 'rgba(255,255,255,0.6)', margin: 0 }}>
+            <p style={{ fontFamily: F_SANS, fontSize: '12px', color: 'rgba(255,255,255,0.8)', margin: 0 }}>
               Register now to get the best deal &amp; book your site visit
             </p>
           </div>

@@ -3,44 +3,44 @@ import React from 'react'
 
 const amenities = [
   {
-    title: 'Well-Equipped Clubhouse',
-    subtitle: 'State-of-the-art clubhouse for social & recreational gatherings',
-    icon: 'fa-solid fa-house-chimney',
+    title: 'Wellness District',
+    subtitle: 'Curated spaces for holistic health, mindfulness and restorative living.',
+    icon: 'fa-solid fa-heart-pulse',
   },
   {
-    title: 'Swimming Pool',
-    subtitle: 'Resort-style pool with expansive lounging deck',
-    icon: 'fa-solid fa-person-swimming',
-  },
-  {
-    title: 'Modern Gym & Fitness',
-    subtitle: 'Fully-equipped modern gymnasium & fitness studio',
-    icon: 'fa-solid fa-dumbbell',
-  },
-  {
-    title: 'Dedicated Yoga Spaces',
-    subtitle: 'Peaceful, serene zones for yoga, meditation & wellness',
+    title: '25,000 Sq. Ft. Retreat Centre',
+    subtitle: 'A community wellness sanctuary with spa, movement studios and healing therapies.',
     icon: 'fa-solid fa-spa',
   },
   {
-    title: 'Pet Park',
-    subtitle: 'Specially designed green play park for pets',
-    icon: 'fa-solid fa-dog',
+    title: 'Sports Zones',
+    subtitle: 'Active recreation courts, trails and multi-sport amenities for all ages.',
+    icon: 'fa-solid fa-bullseye',
   },
   {
-    title: 'Multipurpose Hall',
-    subtitle: 'Spacious celebration hall for private & community events',
-    icon: 'fa-solid fa-people-roof',
+    title: 'Education Spaces',
+    subtitle: 'Dedicated learning environments integrated within the community.',
+    icon: 'fa-solid fa-graduation-cap',
   },
   {
-    title: 'Kids Play Area',
-    subtitle: 'Safe, vibrant outdoor recreational zone for children',
-    icon: 'fa-solid fa-child-reaching',
+    title: 'Residential Plots',
+    subtitle: 'Generous plot sizes for custom homes within a curated natural setting.',
+    icon: 'fa-solid fa-map-location-dot',
   },
   {
-    title: 'Tennis Court & Jogging Track',
-    subtitle: 'Outdoor tennis court, landscaped jogging track & 24/7 CCTV',
-    icon: 'fa-solid fa-person-running',
+    title: 'Private Hamlets',
+    subtitle: 'Exclusive villa clusters set apart within the larger forest masterplan.',
+    icon: 'fa-solid fa-tree-city',
+  },
+  {
+    title: 'Row Houses',
+    subtitle: 'Architecturally considered row homes blending privacy with community.',
+    icon: 'fa-solid fa-house-chimney-window',
+  },
+  {
+    title: 'Nature Trails & Waterways',
+    subtitle: 'Experience genuine waterfalls, river and stream systems, and the natural landscape of Khopoli.',
+    icon: 'fa-solid fa-water',
   },
 ]
 
@@ -50,16 +50,20 @@ const Amenities = () => {
       <div className="container mx-auto px-4 sm:px-6" style={{ maxWidth: '1280px' }}>
 
         {/* Section Title */}
-        <div className="text-center mb-10 sm:mb-12" data-aos="fade-up">
-          <span className="text-[#8B6A34] font-bold text-[13px] sm:text-[14px] tracking-[2.5px] uppercase mb-2 block">
-            WORLD CLASS AMENITIES
+        <div className="text-center mb-10 sm:mb-12 max-w-3xl mx-auto" data-aos="fade-up">
+          <div className="w-12 h-1 bg-[#003792] rounded-full mx-auto mb-3" />
+          <span className="text-[#003792] font-bold text-[13px] sm:text-[14px] tracking-[2.5px] uppercase mb-2 block">
+            FEATURES &amp; AMENITIES
           </span>
-          <h2 className="text-[#111111] text-[22px] sm:text-[26px] md:text-[30px] font-extrabold m-0 leading-tight">
-            A Lifestyle That Complements Your Vision of Luxury
+          <h2 className="text-[#0c2340] text-[22px] sm:text-[26px] md:text-[32px] font-extrabold m-0 leading-tight mb-3">
+            Features &amp; Amenities
           </h2>
+          <p className="text-[#556882] text-[14px] sm:text-[15px] leading-relaxed m-0 font-medium">
+            A thoughtfully planned community where wellness, nature, recreation and everyday living come together in a natural setting.
+          </p>
         </div>
 
-        {/* 4x2 Clean Cards Grid (No Images, Exact Reference Design) */}
+        {/* 4x2 Clean Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-6">
           {amenities.map((item, index) => {
             return (
@@ -67,22 +71,22 @@ const Amenities = () => {
                 key={index}
                 data-aos="fade-up"
                 data-aos-delay={((index % 4) * 60).toString()}
-                className="group relative bg-white rounded-[22px] p-7 border border-[#ececec] shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.08)] hover:border-[#8B6A34]/40 hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-center text-center justify-between min-h-[220px]"
+                className="group relative bg-[#EEF4FC] rounded-[22px] p-7 border border-[#D1E1F5] shadow-[0_4px_20px_rgba(0,55,146,0.03)] hover:shadow-[0_12px_32px_rgba(0,55,146,0.12)] hover:border-[#003792]/50 hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-center text-center justify-between min-h-[220px]"
               >
                 {/* Center Content */}
                 <div className="flex flex-col items-center w-full">
                   {/* Round Icon Badge */}
-                  <div className="w-16 h-16 rounded-full flex items-center justify-center text-[22px] mb-5 transition-all duration-300 group-hover:scale-108 bg-[#F4EFE6] text-[#8B6A34] group-hover:bg-[#111111] group-hover:text-white shadow-sm font-bold">
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center text-[22px] mb-5 transition-all duration-300 group-hover:scale-105 bg-white text-[#003792] group-hover:bg-[#003792] group-hover:text-white shadow-sm font-bold">
                     <i className={item.icon}></i>
                   </div>
 
                   {/* Amenity Title */}
-                  <h3 className="font-bold text-[17px] sm:text-[18px] mb-2 leading-snug transition-colors duration-200 text-[#111111] group-hover:text-[#8B6A34]">
+                  <h3 className="font-bold text-[17px] sm:text-[18px] mb-2 leading-snug transition-colors duration-200 text-[#0c2340] group-hover:text-[#003792]">
                     {item.title}
                   </h3>
 
                   {/* Amenity Subtitle */}
-                  <p className="text-[#6c757d] text-[13px] sm:text-[13.5px] leading-relaxed m-0 font-medium max-w-[230px]">
+                  <p className="text-[#556882] text-[13px] sm:text-[13.5px] leading-relaxed m-0 font-medium max-w-[240px]">
                     {item.subtitle}
                   </p>
                 </div>

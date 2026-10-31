@@ -1,0 +1,743 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'aos/dist/aos.css';
+
+/* ═══════════════════════════════════════════════════════════════
+   THEME VARIABLES — SPRE Villa Plots Khopoli
+   Royal Navy Blue Theme (#003792 + Icy Blue #EEF4FC)
+   ═══════════════════════════════════════════════════════════════ */
+:root {
+  /* ── Primary Brand Blue & Tints ── */
+  --color-gold: #003792;
+  --color-gold-light: #2563EB;
+  --color-gold-dark: #002766;
+  --color-gold-bg: #EEF4FC;
+
+  /* ── Primary Deep Blue ── */
+  --color-primary: #003792;
+  --color-primary-light: #1D4ED8;
+  --color-primary-dark: #001F54;
+
+  /* ── Accent Blue ── */
+  --color-teal: #003792;
+  --color-teal-light: #2563EB;
+  --color-teal-dark: #002766;
+
+  /* ── Dark backgrounds & surfaces ── */
+  --color-dark: #0c1e3d;
+  --color-dark-mid: #071326;
+
+  /* ── Soft Icy Backgrounds ── */
+  --color-bg: #EEF4FC;
+  --color-bg-light: #F4F8FD;
+  --color-bg-muted: #E2EDFB;
+
+  /* ── Text ── */
+  --color-text: #0c2340;
+  --color-text-mid: #1E293B;
+  --color-text-light: #64748B;
+
+  /* ── UI ── */
+  --btn-radius: 50px;
+  --btn-radius-pill: 50px;
+
+  /* ── Shadows ── */
+  --shadow-sm: 0 2px 8px rgba(0, 55, 146, 0.06);
+  --shadow-md: 0 8px 24px rgba(0, 55, 146, 0.12);
+  --shadow-lg: 0 20px 48px rgba(0, 55, 146, 0.18);
+  --shadow-card: 0 4px 20px rgba(0, 55, 146, 0.05);
+  --color-shadow-inner: rgba(0, 55, 146, 0.12);
+}
+
+/* ─── Keyframes ─────────────────────────────────────────────── */
+@keyframes priceBtn {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes blinkPrice {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.blink-price {
+  animation: blinkPrice 0.9s step-end infinite;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulseGlow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 55, 146, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 0 0 10px rgba(0, 55, 146, 0);
+  }
+}
+
+.animate-pulseGlow {
+  animation: pulseGlow 2s infinite;
+}
+
+@keyframes floatSlow {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+/* ─── Global Base Styles ────────────────────────────────────── */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    color: var(--color-text);
+    background-color: #ffffff;
+  }
+
+  body {
+    font-family: var(--font-poppins), 'Poppins', sans-serif;
+    color: var(--color-text);
+    background-color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-jost), 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* ── SPRE Villa Plots scrollbar ── */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #0c1e3d, #003792);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #003792;
+  }
+
+  ::selection {
+    background: rgba(0, 55, 146, 0.18);
+    color: #003792;
+  }
+}
+
+/* ─── Components ────────────────────────────────────────────── */
+@layer components {
+
+  /* ══ PRIMARY BUTTON ══ */
+  .btn-gold {
+    position: relative;
+    overflow: hidden;
+    background: #003792;
+    color: #ffffff;
+    border: 2px solid #003792;
+    border-radius: var(--btn-radius);
+    padding: 12px 32px;
+    font-family: var(--font-jost), 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: all 0.28s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .btn-gold::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.5s ease;
+  }
+
+  .btn-gold:hover::before {
+    left: 130%;
+  }
+
+  .btn-gold:hover {
+    background: #002766 !important;
+    color: #ffffff !important;
+    border-color: #002766;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 55, 146, 0.35);
+  }
+
+  .btn-gold:active {
+    transform: translateY(0);
+  }
+
+  /* ══ OUTLINED ══ */
+  .btn-gold-outline {
+    background: transparent;
+    color: var(--color-gold);
+    border: 2px solid var(--color-gold);
+    border-radius: var(--btn-radius);
+    padding: 12px 32px;
+    font-family: var(--font-jost), 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: all 0.28s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-transform: uppercase;
+  }
+
+  .btn-gold-outline:hover {
+    background: var(--color-gold) !important;
+    color: #fff !important;
+    transform: translateY(-2px);
+  }
+
+  /* ══ DARK PRIMARY ══ */
+  .btn-primary {
+    background: var(--color-dark);
+    color: #fff;
+    border: 2px solid var(--color-dark);
+    border-radius: var(--btn-radius);
+    padding: 12px 32px;
+    font-family: var(--font-jost), 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: all 0.28s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-transform: uppercase;
+  }
+
+  .btn-primary:hover {
+    background: var(--color-gold) !important;
+    border-color: var(--color-gold);
+    transform: translateY(-2px);
+  }
+
+  /* ══ FLOATING TAB ══ */
+  .btn-floating-tab {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    z-index: 40;
+    transform: translateY(-50%);
+    border-radius: 10px 0 0 10px;
+    writing-mode: vertical-rl;
+    padding: 20px 12px;
+    font-size: 13px;
+    font-weight: 800;
+    font-family: var(--font-poppins), 'Poppins', sans-serif;
+    letter-spacing: 2px;
+    box-shadow: -4px 0 20px rgba(0, 55, 146, 0.35);
+    background: #003792;
+    color: #ffffff;
+    border: 2px solid #002766;
+    border-right: none;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .btn-floating-tab:hover {
+    transform: translateY(-50%) translateX(-3px) !important;
+    background: #002766 !important;
+    color: #ffffff !important;
+    border-color: #002766;
+    box-shadow: -6px 0 25px rgba(0, 55, 146, 0.5);
+  }
+
+  /* ══ SECTION TITLE ══ */
+  .section-title {
+    font-size: 32px;
+    font-weight: 800;
+    font-family: var(--font-jost), 'Montserrat', sans-serif;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  /* ══ FORM INPUTS ══ */
+  .form-input {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 6px;
+    font-family: var(--font-sans), 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: var(--color-text);
+    background: #fff;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .form-input:focus {
+    border-color: #003792;
+    box-shadow: 0 0 0 3px rgba(0, 55, 146, 0.15);
+  }
+
+  .form-input::placeholder {
+    color: #9ca3af;
+  }
+
+  .form-input-dark {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid #333333;
+    border-radius: 6px;
+    font-family: var(--font-sans), 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+    background: #111111;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .form-input-dark:focus {
+    border-color: #003792;
+    box-shadow: 0 0 0 3px rgba(0, 55, 146, 0.2);
+  }
+
+  .form-input-dark::placeholder {
+    color: #666666;
+  }
+
+  /* ══ CARD STYLES ══ */
+  .card-luxury {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #D9E5F6;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+  }
+
+  .card-luxury:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+  }
+
+  /* ══ GOLD ACCENT BARS ══ */
+  .gold-divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #003792, #2563EB);
+    border-radius: 2px;
+    margin: 12px auto 0;
+  }
+
+  .gold-divider-left {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #003792, #2563EB);
+    border-radius: 2px;
+    margin: 12px 0 0;
+  }
+
+  /* ══ SECTION CONTAINER ══ */
+  .section-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  @media (max-width: 640px) {
+    .section-container {
+      padding: 0 16px;
+    }
+  }
+
+  /* ══ MODAL BACKDROP ══ */
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    animation: fadeIn 0.2s ease;
+  }
+
+  .modal-dialog {
+    background: #ffffff;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 520px;
+    overflow: hidden;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35);
+    position: relative;
+    animation: fadeUp 0.3s ease;
+  }
+
+  /* ══ SECTION ALTERNATING BACKGROUNDS ══ */
+  .bg-section-alt {
+    background-color: #EEF4FC;
+  }
+
+  .bg-section-dark {
+    background-color: var(--color-dark);
+    color: #ffffff;
+  }
+
+  /* ══ NAVIGATION BAR ══ */
+  .nav-header {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #D9E5F6;
+    transition: all 0.3s ease;
+  }
+
+  .nav-header.scrolled {
+    box-shadow: 0 4px 20px rgba(0, 55, 146, 0.08);
+  }
+
+  .nav-link {
+    font-family: var(--font-jost), 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-text);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    position: relative;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: #003792;
+  }
+
+  .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #003792;
+    border-radius: 1px;
+  }
+
+  /* ══ AMENITIES ICONS ══ */
+  .amenity-card {
+    background: #ffffff;
+    border: 1px solid #D9E5F6;
+    border-radius: 14px;
+    padding: 24px 16px;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  .amenity-card:hover {
+    border-color: #003792;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 55, 146, 0.12);
+  }
+
+  .amenity-icon-wrap {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #EEF4FC;
+    border: 1.5px solid rgba(0, 55, 146, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    color: #003792;
+    font-size: 24px;
+    transition: all 0.3s;
+  }
+
+  .amenity-card:hover .amenity-icon-wrap {
+    background: #003792;
+    color: #ffffff;
+    border-color: #003792;
+  }
+
+  /* ══ HERO BANNER CTA OVERLAYS ══ */
+  .hero-tagline {
+    font-family: var(--font-jost), 'Montserrat', sans-serif;
+    font-size: clamp(28px, 4.5vw, 56px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  /* ══ STICKY BOTTOM BAR (Mobile) ══ */
+  .sticky-bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    display: flex;
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  @media (min-width: 1024px) {
+    .sticky-bottom-bar {
+      display: none;
+    }
+  }
+}
+
+/* ─── SPRE Villa Plots Hero Styles ─────────────────────────────────── */
+.hero-section {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+}
+
+.lead-form-input {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1.5px solid #D9E5F6;
+  border-radius: 10px;
+  outline: none;
+  font-size: 14.5px;
+  color: #0c2340;
+  background: #EEF4FC;
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+  margin-bottom: 12px;
+}
+
+.lead-form-input:focus {
+  border-color: #003792;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(0, 55, 146, 0.15);
+}
+
+.lead-form-input::placeholder {
+  color: #64748B;
+  font-weight: 400;
+}
+
+/* Hero Section Inputs */
+.hero-section .lead-form-input {
+  background: #F4F8FD;
+  border: 1.5px solid #D9E5F6;
+  color: #0c2340;
+}
+
+.hero-section .lead-form-input::placeholder {
+  color: #94A3B8;
+  opacity: 1;
+}
+
+.hero-section .lead-form-input:focus {
+  background: #ffffff;
+  border-color: #003792;
+  box-shadow: 0 0 0 3px rgba(0, 55, 146, 0.18);
+}
+
+.hero-section .lead-form-btn {
+  background: #003792 !important;
+  color: #ffffff !important;
+  border: 2px solid #003792 !important;
+  font-weight: 800;
+  box-shadow: 0 4px 16px rgba(0, 55, 146, 0.3);
+}
+
+.hero-section .lead-form-btn:hover {
+  background: #002766 !important;
+  color: #ffffff !important;
+  border-color: #002766 !important;
+  box-shadow: 0 8px 25px rgba(0, 55, 146, 0.4);
+}
+
+.lead-form-btn {
+  width: 100%;
+  padding: 14px 24px;
+  background: #003792;
+  color: #ffffff;
+  border: 2px solid #003792;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 800;
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.lead-form-btn:hover {
+  background: #002766 !important;
+  color: #ffffff !important;
+  border-color: #002766;
+  box-shadow: 0 8px 25px rgba(0, 55, 146, 0.4);
+  transform: translateY(-1px);
+}
+
+.lead-form-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Hero buttons hover */
+.btn-blue:hover {
+  background: #002766 !important;
+  box-shadow: 0 12px 30px rgba(0, 55, 146, 0.4);
+}
+
+.btn-white:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: #ffffff !important;
+}
+
+/* Hero responsive */
+@media (max-width: 1023px) {
+  .hero-section {
+    padding: 0 0 40px !important;
+    min-height: auto !important;
+  }
+
+  .hero-info-bar {
+    flex-direction: column;
+  }
+
+  .hero-info-bar .info-item {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .hero-info-bar .info-item:last-child {
+    border-bottom: none;
+  }
+
+  .lead-form {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-section {
+    padding: 0 !important;
+  }
+
+  .partner-badge {
+    font-size: 11px !important;
+    padding: 8px 14px !important;
+  }
+
+  .lead-form-input {
+    padding: 11px 14px !important;
+    font-size: 13.5px !important;
+    margin-bottom: 10px !important;
+    border-radius: 8px !important;
+  }
+
+  .lead-form-btn {
+    padding: 12px 20px !important;
+    font-size: 14px !important;
+    border-radius: 8px !important;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .hero-buttons a {
+    text-align: center;
+    width: 100%;
+  }
+}

@@ -64,10 +64,11 @@ export default function Home() {
         <Location />
       </LazySection>
 
-      {/* ── Section 8: Master & Floor Plan ── */}
+      {/* ── Section 8: Master & Floor Plan (Hidden / Commented Out) ──
       <LazySection id="masterplan" minHeight="550px">
         <MasterPlan setIsOpen={setIsOpen} />
       </LazySection>
+      ── */}
 
       {/* ── Section 9: About Developer ── */}
       <LazySection id="developer" minHeight="400px">
@@ -91,9 +92,9 @@ export default function Home() {
           writingMode: 'vertical-rl',
           textOrientation: 'mixed',
           letterSpacing: '2px',
-          background: '#111111',
+          background: '#003792',
           color: '#ffffff',
-          border: '2px solid #8B6A34',
+          border: '2px solid #003792',
           borderRight: 'none',
         }}
       >
@@ -120,7 +121,7 @@ export default function Home() {
           onMouseEnter={prefetchModal}
           onTouchStart={prefetchModal}
           className="flex-1 flex flex-col items-center justify-center py-2 px-1"
-          style={{ background: '#8B6A34', borderRight: '1px solid rgba(255,255,255,0.15)' }}
+          style={{ background: '#003792', borderRight: '1px solid rgba(255,255,255,0.15)' }}
         >
           <div className="enquire-icon-wrap flex items-center justify-center">
             <svg width="22" height="22" fill="none" stroke="#ffffff" strokeWidth="2.5" viewBox="0 0 24 24">
@@ -131,7 +132,7 @@ export default function Home() {
           <span className="text-[11px] sm:text-[12px] font-extrabold text-white mt-1 leading-none">ENQUIRE</span>
         </button>
         <a
-          href={`https://wa.me/${WHATSAPP_NUMBER.replace(/\D/g, '')}?text=${encodeURIComponent(`Hi, I am interested in ${PROJECT_NAME}.`)}`}
+          href={`https://wa.me/${WHATSAPP_NUMBER.replace(/\D/g, '')}?text=${encodeURIComponent(`Hi, I am interested in ${PROJECT_NAME} Khopoli. Please share brochure, plot layouts and price details.`)}`}
           target="_blank" rel="noopener noreferrer"
           className="flex-1 flex flex-col items-center justify-center py-2 px-1"
           style={{ background: '#25D366' }}

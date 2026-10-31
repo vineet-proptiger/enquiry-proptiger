@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { PHONE_NUMBER, PHONE_DISPLAY, RERA_NO } from '../../lib/spre-villa-plots-khapoli/config'
 
 const Footer = ({ setIsOpen }) => (
-  <footer style={{ background: '#000000', color: '#ffffff', fontFamily: 'var(--font-poppins), Poppins, sans-serif' }} className="py-14 sm:py-16 px-4 sm:px-6 md:px-10 border-t border-white/10">
+  <footer style={{ background: '#00132b', color: '#ffffff', fontFamily: 'var(--font-poppins), Poppins, sans-serif' }} className="py-14 sm:py-16 px-4 sm:px-6 md:px-10 border-t border-white/10">
     <div className="max-w-[1150px] mx-auto flex flex-col items-center text-center">
 
       {/* ── SECTION 8: Headline ── */}
@@ -20,7 +20,7 @@ const Footer = ({ setIsOpen }) => (
         data-aos="fade-up" data-aos-delay="50"
         className="text-[#d1d5db] font-medium text-[14px] sm:text-[16px] md:text-[17px] max-w-3xl leading-relaxed mb-8"
       >
-        Exclusive 3 BHK Luxury Apartments | Panathur, Off Marathahalli-ORR, Bengaluru | New Launch
+        Exclusive Residential Plots | Khopoli, Mumbai 3.0 | New Launch
       </p>
 
       {/* ── SECTION 8: CTA Buttons ── */}
@@ -33,19 +33,17 @@ const Footer = ({ setIsOpen }) => (
           onClick={() => setIsOpen && setIsOpen(true)}
           className="px-6 sm:px-8 py-3 rounded-full font-extrabold text-[14px] sm:text-[15px] transition-all duration-300 shadow-md hover:-translate-y-0.5 cursor-pointer"
           style={{
-            background: '#111111',
+            background: '#003792',
             color: '#ffffff',
-            border: '2px solid #8B6A34',
+            border: '2px solid #003792',
           }}
           onMouseEnter={e => {
-            e.currentTarget.style.background = '#8B6A34';
-            e.currentTarget.style.borderColor = '#8B6A34';
-            e.currentTarget.style.color = '#ffffff';
+            e.currentTarget.style.background = '#002766';
+            e.currentTarget.style.borderColor = '#002766';
           }}
           onMouseLeave={e => {
-            e.currentTarget.style.background = '#111111';
-            e.currentTarget.style.borderColor = '#8B6A34';
-            e.currentTarget.style.color = '#ffffff';
+            e.currentTarget.style.background = '#003792';
+            e.currentTarget.style.borderColor = '#003792';
           }}
         >
           Enquire Now
@@ -56,19 +54,17 @@ const Footer = ({ setIsOpen }) => (
           onClick={() => setIsOpen && setIsOpen(true)}
           className="px-6 sm:px-8 py-3 rounded-full font-extrabold text-[14px] sm:text-[15px] transition-all duration-300 shadow-md hover:-translate-y-0.5 cursor-pointer"
           style={{
-            background: '#111111',
+            background: 'transparent',
             color: '#ffffff',
-            border: '2px solid #8B6A34',
+            border: '2px solid #003792',
           }}
           onMouseEnter={e => {
-            e.currentTarget.style.background = '#8B6A34';
-            e.currentTarget.style.borderColor = '#8B6A34';
-            e.currentTarget.style.color = '#ffffff';
+            e.currentTarget.style.background = '#003792';
+            e.currentTarget.style.borderColor = '#003792';
           }}
           onMouseLeave={e => {
-            e.currentTarget.style.background = '#111111';
-            e.currentTarget.style.borderColor = '#8B6A34';
-            e.currentTarget.style.color = '#ffffff';
+            e.currentTarget.style.background = 'transparent';
+            e.currentTarget.style.borderColor = '#003792';
           }}
         >
           Download Brochure
@@ -79,19 +75,17 @@ const Footer = ({ setIsOpen }) => (
           onClick={() => setIsOpen && setIsOpen(true)}
           className="px-6 sm:px-8 py-3 rounded-full font-extrabold text-[14px] sm:text-[15px] transition-all duration-300 shadow-md hover:-translate-y-0.5 cursor-pointer"
           style={{
-            background: '#111111',
+            background: 'transparent',
             color: '#ffffff',
-            border: '2px solid #8B6A34',
+            border: '2px solid #003792',
           }}
           onMouseEnter={e => {
-            e.currentTarget.style.background = '#8B6A34';
-            e.currentTarget.style.borderColor = '#8B6A34';
-            e.currentTarget.style.color = '#ffffff';
+            e.currentTarget.style.background = '#003792';
+            e.currentTarget.style.borderColor = '#003792';
           }}
           onMouseLeave={e => {
-            e.currentTarget.style.background = '#111111';
-            e.currentTarget.style.borderColor = '#8B6A34';
-            e.currentTarget.style.color = '#ffffff';
+            e.currentTarget.style.background = 'transparent';
+            e.currentTarget.style.borderColor = '#003792';
           }}
         >
           Schedule Site Visit
@@ -104,15 +98,15 @@ const Footer = ({ setIsOpen }) => (
         className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 bg-white/[0.06] border border-white/15 px-6 py-3 rounded-full mb-10 text-[14px] sm:text-[15px]"
       >
         <span className="flex items-center gap-1.5 text-neutral-300">
-          <i className="fa-solid fa-location-dot text-[#8B6A34]"></i>
-          Panathur, Off Marathahalli-ORR, Bengaluru
+          <i className="fa-solid fa-location-dot text-[#60A5FA]"></i>
+          Khopoli, Mumbai 3.0
         </span>
         <span className="text-white/20 hidden sm:inline">|</span>
         <a 
           href={`tel:${PHONE_NUMBER}`} 
-          className="flex items-center gap-1.5 text-white hover:text-[#8B6A34] font-bold transition-colors duration-200"
+          className="flex items-center gap-1.5 text-white hover:text-[#60A5FA] font-bold transition-colors duration-200"
         >
-          <i className="fa-solid fa-phone text-[#8B6A34]"></i>
+          <i className="fa-solid fa-phone text-[#60A5FA]"></i>
           {PHONE_DISPLAY}
         </a>
       </div>
@@ -138,15 +132,15 @@ const Footer = ({ setIsOpen }) => (
         <Link
           href="/spre-villa-plots-khapoli/privacy-policy"
           prefetch={false}
-          className="text-[#8B6A34] hover:underline font-medium transition-colors duration-200"
+          className="text-[#60A5FA] hover:underline font-medium transition-colors duration-200"
         >
           Privacy Policy
         </Link>
       </div>
 
       {/* ── 2nd SS Content: Detailed Legal Disclaimer ── */}
-      <p className="w-full text-left text-neutral-500 text-[12px] leading-[1.75] m-0">
-        <strong className="text-[#8B6A34]">Disclaimer:</strong> This is not the official website of the developer. The information depicted herein, including master plans, floor plans, furniture layout, fittings, illustrations, specifications, designs, dimensions, rendered views, colours, amenities and facilities etc., are subject to change without notification as may be required by the relevant authorities or the Developer&apos;s architect. This advertisement is an invitation to offer and shall not be construed as an offer or contract. * Prices subject to change without notice. All taxes extra as applicable.
+      <p className="w-full text-left text-neutral-400 text-[12px] leading-[1.75] m-0">
+        <strong className="text-[#60A5FA]">Disclaimer:</strong> This is not the official website of the developer. The information depicted herein, including master plans, floor plans, furniture layout, fittings, illustrations, specifications, designs, dimensions, rendered views, colours, amenities and facilities etc., are subject to change without notification as may be required by the relevant authorities or the Developer&apos;s architect. This advertisement is an invitation to offer and shall not be construed as an offer or contract. * Prices subject to change without notice. All taxes extra as applicable.
       </p>
 
     </div>

@@ -86,7 +86,7 @@ const DownloadCard = ({ doc, setIsOpen }) => {
     >
       {/* Card body */}
       <div style={{
-        background: hovered ? '#111111' : '#ffffff',
+        background: hovered ? '#003792' : '#ffffff',
         padding: '40px 20px 28px',
         textAlign: 'center',
         flex: 1,
@@ -109,10 +109,10 @@ const DownloadCard = ({ doc, setIsOpen }) => {
           {doc.label}
         </p>
 
-        {/* Gold underline */}
+        {/* Blue underline */}
         <div style={{
           width: '40px', height: '2px',
-          background: '#8B6A34',
+          background: hovered ? '#ffffff' : '#003792',
           margin: '0 auto',
           borderRadius: '1px',
         }} />
@@ -123,15 +123,15 @@ const DownloadCard = ({ doc, setIsOpen }) => {
         onClick={() => setIsOpen(true)}
         style={{
           display: 'block', width: '100%',
-          background: '#111111', color: '#ffffff', border: 'none',
+          background: '#003792', color: '#ffffff', border: 'none',
           padding: '15px 0',
           fontFamily: F_JOST, fontWeight: '800', fontSize: '13px',
           letterSpacing: '0.12em', textTransform: 'uppercase',
           cursor: 'pointer', transition: 'background 0.2s',
           flexShrink: 0,
         }}
-        onMouseEnter={e => (e.currentTarget.style.background = '#8B6A34', e.currentTarget.style.color = '#ffffff')}
-        onMouseLeave={e => (e.currentTarget.style.background = '#111111', e.currentTarget.style.color = '#ffffff')}
+        onMouseEnter={e => (e.currentTarget.style.background = '#002766', e.currentTarget.style.color = '#ffffff')}
+        onMouseLeave={e => (e.currentTarget.style.background = '#003792', e.currentTarget.style.color = '#ffffff')}
       >
         DOWNLOAD
       </button>
@@ -140,7 +140,7 @@ const DownloadCard = ({ doc, setIsOpen }) => {
 }
 
 const Downloads = ({ setIsOpen }) => (
-  <section id="downloads" style={{ padding: '72px 0', background: '#111111' }}>
+  <section id="downloads" style={{ padding: '72px 0', background: '#00132b' }}>
     {/* Truly Full width */}
     <div style={{ width: '100%', padding: '0' }}>
 

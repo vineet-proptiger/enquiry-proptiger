@@ -14,7 +14,7 @@ const Overview = ({ setIsOpen }) => {
             <div className="relative w-full max-w-[500px] h-[340px] sm:h-[390px] md:h-[430px] lg:h-[440px] rounded-[24px] overflow-hidden shadow-[0_12px_40px_rgba(0,0,0,0.08)]">
                <Image 
                  src={overviewImage} 
-                 alt="About Sobha Ayana" 
+                 alt="About SPRE Villa Plots" 
                  fill 
                  className="object-cover" 
                  sizes="(max-width: 1024px) 100vw, 50vw" 
@@ -28,36 +28,40 @@ const Overview = ({ setIsOpen }) => {
           {/* Content Column */}
           <div className="w-full lg:w-1/2 lg:px-[16px] lg:pl-12">
             <div>
-              <span className="text-[#8B6A34] font-bold text-[13px] sm:text-[14px] tracking-[2.5px] uppercase mb-2 block">
-                LUXURY LIVING
+              <div className="w-12 h-1 bg-[#003792] rounded-full mb-3" />
+              <span className="text-[#003792] font-bold text-[13px] sm:text-[14px] tracking-[2.5px] uppercase mb-2 block">
+                NATURE &amp; WELLNESS RETREAT
               </span>
-              <h2 className="text-[#111111] text-[24px] sm:text-[28px] md:text-[32px] font-black leading-[1.15] mb-4 tracking-tight">
+              <h2 className="text-[#0c2340] text-[24px] sm:text-[28px] md:text-[32px] font-black leading-[1.15] mb-4 tracking-tight">
                 Project Overview
               </h2>
 
-              <div className="mb-6">
-                <p className="text-[#4A5568] text-[15px] leading-[1.8] text-left m-0">
-                  Raw tropical beauty in sylvan surrender of quietude. A world where modern living harmonises with the essence of a lush paradise. Brimming with over 100 amenities, here unparalleled opulence blossoms in nature&apos;s abundance. Set in 81 acres of SOBHA Dream Acres, SOBHA Ayana&apos;s contemporary design and organic allure beckons those yearning to commune with nature amidst the city&apos;s urban sprawl.
+              <div className="mb-6 space-y-3.5 border-l-[3px] border-[#003792] pl-4 sm:pl-5">
+                <p className="text-[#334155] text-[15px] leading-[1.8] text-left m-0">
+                  <strong className="text-[#0c2340]">SPRE</strong> brings its legacy of creating thoughtfully planned spaces to <strong className="text-[#0c2340]">Khopoli</strong>, an emerging destination for wellness, nature and long-term living. This premium plotted community offers the opportunity to own your land and create a retreat that is uniquely yours, surrounded by an expansive natural setting.
+                </p>
+                <p className="text-[#334155] text-[15px] leading-[1.8] text-left m-0">
+                  The development spans <strong className="text-[#0c2340]">900 acres of Shapoorji Pallonji-owned land</strong>, with <strong className="text-[#0c2340]">380 acres planned as forest</strong> and <strong className="text-[#0c2340]">520 acres envisioned</strong> for residential plots, future villas, wellness and fitness spaces, tracks and other lifestyle experiences. The development is further complemented by approximately <strong className="text-[#0c2340]">2,000 acres of government forest</strong> in its surroundings.
                 </p>
               </div>
 
-              {/* ── Project Stats Grid (From SS) ── */}
-              <div className="grid grid-cols-2 gap-4 p-5 rounded-2xl bg-[#FAF8F5] border border-[#EAE6DF]">
+              {/* ── Project Stats Grid ── */}
+              <div className="grid grid-cols-2 gap-4 p-5 rounded-2xl bg-[#EEF4FC] border border-[#D1E1F5]">
                 <div>
-                  <div className="text-[22px] sm:text-[26px] font-black text-[#111111] tracking-tight">6.29 Acres</div>
-                  <div className="text-[11px] sm:text-[12px] font-bold text-gray-500 uppercase tracking-wider mt-0.5">LAND PARCEL</div>
+                  <div className="text-[22px] sm:text-[26px] font-black text-[#003792] tracking-tight">900 Acres</div>
+                  <div className="text-[11px] sm:text-[12px] font-bold text-[#556882] uppercase tracking-wider mt-0.5">SHAPOORJI PALLONJI LAND</div>
                 </div>
-                <div className="border-l border-[#EAE6DF] pl-4">
-                  <div className="text-[22px] sm:text-[26px] font-black text-[#111111] tracking-tight">12</div>
-                  <div className="text-[11px] sm:text-[12px] font-bold text-gray-500 uppercase tracking-wider mt-0.5">NO. OF WINGS</div>
+                <div className="border-l border-[#D1E1F5] pl-4">
+                  <div className="text-[22px] sm:text-[26px] font-black text-[#003792] tracking-tight">380 Acres</div>
+                  <div className="text-[11px] sm:text-[12px] font-bold text-[#556882] uppercase tracking-wider mt-0.5">PLANNED FOREST</div>
                 </div>
-                <div className="border-t border-[#EAE6DF] pt-3">
-                  <div className="text-[22px] sm:text-[26px] font-black text-[#111111] tracking-tight">2B + G + 14F</div>
-                  <div className="text-[11px] sm:text-[12px] font-bold text-gray-500 uppercase tracking-wider mt-0.5">NO. OF FLOORS</div>
+                <div className="border-t border-[#D1E1F5] pt-3">
+                  <div className="text-[22px] sm:text-[26px] font-black text-[#003792] tracking-tight">520 Acres</div>
+                  <div className="text-[11px] sm:text-[12px] font-bold text-[#556882] uppercase tracking-wider mt-0.5">COMMUNITY PLANNED</div>
                 </div>
-                <div className="border-t border-l border-[#EAE6DF] pt-3 pl-4">
-                  <div className="text-[22px] sm:text-[26px] font-black text-[#111111] tracking-tight">683</div>
-                  <div className="text-[11px] sm:text-[12px] font-bold text-gray-500 uppercase tracking-wider mt-0.5">NO. OF UNITS</div>
+                <div className="border-t border-l border-[#D1E1F5] pt-3 pl-4">
+                  <div className="text-[22px] sm:text-[26px] font-black text-[#003792] tracking-tight">2,000+ Acres</div>
+                  <div className="text-[11px] sm:text-[12px] font-bold text-[#556882] uppercase tracking-wider mt-0.5">GOVT FOREST SURROUNDINGS</div>
                 </div>
               </div>
 

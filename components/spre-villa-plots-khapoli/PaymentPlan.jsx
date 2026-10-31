@@ -34,10 +34,11 @@ const PaymentPlan = ({ setIsOpen }) => {
       <div className="container mx-auto px-4 sm:px-6" style={{ maxWidth: '1150px' }}>
         {/* Section Title */}
         <div className="text-center max-w-[800px] mx-auto mb-12 sm:mb-14" data-aos="fade-up">
-          <span className="text-[#8B6A34] font-bold text-[13px] sm:text-[14px] tracking-[2.5px] uppercase mb-3 block">
+          <div className="w-12 h-1 bg-[#003792] rounded-full mx-auto mb-3" />
+          <span className="text-[#003792] font-bold text-[13px] sm:text-[14px] tracking-[2.5px] uppercase mb-3 block">
             PAYMENT PLAN
           </span>
-          <h2 className="text-[#111111] text-[22px] sm:text-[26px] md:text-[30px] font-extrabold m-0 leading-tight">
+          <h2 className="text-[#0c2340] text-[22px] sm:text-[26px] md:text-[30px] font-extrabold m-0 leading-tight">
             Flexible Payment Plan
           </h2>
         </div>
@@ -46,8 +47,8 @@ const PaymentPlan = ({ setIsOpen }) => {
         <div
           className="bg-white rounded-[24px] sm:rounded-[28px] p-2 sm:p-3"
           style={{
-            boxShadow: '0 20px 50px rgba(0, 0, 0, 0.08)',
-            border: '1px solid rgba(139, 106, 52, 0.2)',
+            boxShadow: '0 20px 50px rgba(0, 55, 146, 0.06)',
+            border: '1px solid #D1E1F5',
           }}
           data-aos="fade-up"
           onMouseLeave={() => setActiveIdx(null)}
@@ -66,8 +67,8 @@ const PaymentPlan = ({ setIsOpen }) => {
                     isActive ? 'scale-[1.01] sm:scale-100 z-10' : ''
                   }`}
                   style={{
-                    background: isActive ? '#111111' : 'transparent',
-                    boxShadow: isActive ? '0 12px 30px rgba(0, 0, 0, 0.35)' : 'none',
+                    background: isActive ? '#003792' : 'transparent',
+                    boxShadow: isActive ? '0 12px 30px rgba(0, 55, 146, 0.35)' : 'none',
                   }}
                 >
                   {/* Vertical Divider for desktop (only when neither current nor previous is active) */}

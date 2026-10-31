@@ -39,10 +39,11 @@ const Gallery = () => {
         
         {/* Section Title */}
         <div className="text-center mb-12">
-          <span className="block text-[#8B6A34] font-bold text-[13px] uppercase tracking-[2.5px] mb-2">
+          <div className="w-12 h-1 bg-[#003792] rounded-full mx-auto mb-3" />
+          <span className="block text-[#003792] font-bold text-[13px] uppercase tracking-[2.5px] mb-2">
             PROJECT GALLERY
           </span>
-          <h2 className="text-[#111111] font-extrabold text-[22px] sm:text-[26px] md:text-[30px] tracking-tight">
+          <h2 className="text-[#0c2340] font-extrabold text-[22px] sm:text-[26px] md:text-[30px] tracking-tight">
             Project Gallery
           </h2>
         </div>
@@ -115,7 +116,7 @@ const Gallery = () => {
           {/* Close Button */}
           <button
             onClick={() => setLightbox(null)}
-            className="absolute top-6 right-6 w-12 h-12 rounded-full bg-[#111111] hover:bg-[#8B6A34] text-white text-2xl font-bold flex items-center justify-center transition-transform hover:scale-105 shadow-lg z-20 cursor-pointer"
+            className="absolute top-6 right-6 w-12 h-12 rounded-full bg-[#111111] hover:bg-[#003792] text-white text-2xl font-bold flex items-center justify-center transition-transform hover:scale-105 shadow-lg z-20 cursor-pointer"
             aria-label="Close"
           >
             ×
